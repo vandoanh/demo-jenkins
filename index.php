@@ -1,2 +1,2 @@
 <?php
-echo 'xin chao jenkins';
+echo 'xin chao jenkins. Co chay ngon khong';
