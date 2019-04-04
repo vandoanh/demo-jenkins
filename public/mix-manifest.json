@@ -1,0 +1,11 @@
+{
+    "/static/js/app.js": "/static/js/app.js?id=e148da17841560d8d3eb",
+    "/static/js/app.be.js": "/static/js/app.be.js?id=eb97c81825bd4c53beb3",
+    "/static/js/sw-custom.js": "/static/js/sw-custom.js?id=ac2ffb578c409def9dfe",
+    "/static/css/vendor.css": "/static/css/vendor.css?id=acbe16d71b12e4c00cf0",
+    "/static/css/app.css": "/static/css/app.css?id=63f9e492042905d86a53",
+    "/static/css/app.be.css": "/static/css/app.be.css?id=bcb89bf5ebabe2969d2a",
+    "/static/js/ckeditor/config.js": "/static/js/ckeditor/config.js?id=fc1c9fe8493d60aa993d",
+    "/static/js/ckeditor/styles.js": "/static/js/ckeditor/styles.js?id=4a98624b06535c0034e4",
+    "/static/js/ckeditor/contents.css": "/static/js/ckeditor/contents.css?id=5511bb53ae47a8c42da6"
+}

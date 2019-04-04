@@ -1,0 +1,1204 @@
+[2019-03-27 01:08:24] local.ERROR: {"error":{"root_cause":[{"type":"resource_already_exists_exception","reason":"index [eas_blog/-CCqzNmkRHitFG2CldwwRg] already exists","index_uuid":"-CCqzNmkRHitFG2CldwwRg","index":"eas_blog"}],"type":"resource_already_exists_exception","reason":"index [eas_blog/-CCqzNmkRHitFG2CldwwRg] already exists","index_uuid":"-CCqzNmkRHitFG2CldwwRg","index":"eas_blog"},"status":400} {"exception":"[object] (Elasticsearch\\Common\\Exceptions\\BadRequest400Exception(code: 400): {\"error\":{\"root_cause\":[{\"type\":\"resource_already_exists_exception\",\"reason\":\"index [eas_blog/-CCqzNmkRHitFG2CldwwRg] already exists\",\"index_uuid\":\"-CCqzNmkRHitFG2CldwwRg\",\"index\":\"eas_blog\"}],\"type\":\"resource_already_exists_exception\",\"reason\":\"index [eas_blog/-CCqzNmkRHitFG2CldwwRg] already exists\",\"index_uuid\":\"-CCqzNmkRHitFG2CldwwRg\",\"index\":\"eas_blog\"},\"status\":400} at /usr/share/nginx/html/blog/vendor/elasticsearch/elasticsearch/src/Elasticsearch/Connections/Connection.php:615)
+[stacktrace]
+#0 /usr/share/nginx/html/blog/vendor/elasticsearch/elasticsearch/src/Elasticsearch/Connections/Connection.php(279): Elasticsearch\\Connections\\Connection->process4xxError(Array, Array, Array)
+#1 /usr/share/nginx/html/blog/vendor/react/promise/src/FulfilledPromise.php(25): Elasticsearch\\Connections\\Connection->Elasticsearch\\Connections\\{closure}(Array)
+#2 /usr/share/nginx/html/blog/vendor/guzzlehttp/ringphp/src/Future/CompletedFutureValue.php(55): React\\Promise\\FulfilledPromise->then(Object(Closure), NULL, NULL)
+#3 /usr/share/nginx/html/blog/vendor/guzzlehttp/ringphp/src/Core.php(341): GuzzleHttp\\Ring\\Future\\CompletedFutureValue->then(Object(Closure), NULL, NULL)
+#4 /usr/share/nginx/html/blog/vendor/elasticsearch/elasticsearch/src/Elasticsearch/Connections/Connection.php(299): GuzzleHttp\\Ring\\Core::proxy(Object(GuzzleHttp\\Ring\\Future\\CompletedFutureArray), Object(Closure))
+#5 /usr/share/nginx/html/blog/vendor/elasticsearch/elasticsearch/src/Elasticsearch/Connections/Connection.php(177): Elasticsearch\\Connections\\Connection->Elasticsearch\\Connections\\{closure}(Array, Object(Elasticsearch\\Connections\\Connection), Object(Elasticsearch\\Transport), Array)
+#6 /usr/share/nginx/html/blog/vendor/elasticsearch/elasticsearch/src/Elasticsearch/Transport.php(110): Elasticsearch\\Connections\\Connection->performRequest('PUT', '/eas_blog', Array, '{\"settings\":{\"a...', Array, Object(Elasticsearch\\Transport))
+#7 /usr/share/nginx/html/blog/vendor/elasticsearch/elasticsearch/src/Elasticsearch/Namespaces/AbstractNamespace.php(72): Elasticsearch\\Transport->performRequest('PUT', '/eas_blog', Array, Array, Array)
+#8 /usr/share/nginx/html/blog/vendor/elasticsearch/elasticsearch/src/Elasticsearch/Namespaces/IndicesNamespace.php(718): Elasticsearch\\Namespaces\\AbstractNamespace->performRequest(Object(Elasticsearch\\Endpoints\\Indices\\Create))
+#9 /usr/share/nginx/html/blog/vendor/elasticquent/elasticquent/src/ElasticquentTrait.php(540): Elasticsearch\\Namespaces\\IndicesNamespace->create(Array)
+#10 /usr/share/nginx/html/blog/app/Library/Services/Commands/ESIndexMapping.php(31): App\\Library\\Models\\MySql\\Post::createIndex('5', '1')
+#11 [internal function]: App\\Library\\Services\\Commands\\ESIndexMapping->handle()
+#12 /usr/share/nginx/html/blog/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(29): call_user_func_array(Array, Array)
+#13 /usr/share/nginx/html/blog/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(87): Illuminate\\Container\\BoundMethod::Illuminate\\Container\\{closure}()
+#14 /usr/share/nginx/html/blog/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(31): Illuminate\\Container\\BoundMethod::callBoundMethod(Object(Illuminate\\Foundation\\Application), Array, Object(Closure))
+#15 /usr/share/nginx/html/blog/vendor/laravel/framework/src/Illuminate/Container/Container.php(572): Illuminate\\Container\\BoundMethod::call(Object(Illuminate\\Foundation\\Application), Array, Array, NULL)
+#16 /usr/share/nginx/html/blog/vendor/laravel/framework/src/Illuminate/Console/Command.php(183): Illuminate\\Container\\Container->call(Array)
+#17 /usr/share/nginx/html/blog/vendor/symfony/console/Command/Command.php(255): Illuminate\\Console\\Command->execute(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Illuminate\\Console\\OutputStyle))
+#18 /usr/share/nginx/html/blog/vendor/laravel/framework/src/Illuminate/Console/Command.php(170): Symfony\\Component\\Console\\Command\\Command->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Illuminate\\Console\\OutputStyle))
+#19 /usr/share/nginx/html/blog/vendor/symfony/console/Application.php(908): Illuminate\\Console\\Command->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#20 /usr/share/nginx/html/blog/vendor/symfony/console/Application.php(269): Symfony\\Component\\Console\\Application->doRunCommand(Object(App\\Library\\Services\\Commands\\ESIndexMapping), Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#21 /usr/share/nginx/html/blog/vendor/symfony/console/Application.php(145): Symfony\\Component\\Console\\Application->doRun(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#22 /usr/share/nginx/html/blog/vendor/laravel/framework/src/Illuminate/Console/Application.php(89): Symfony\\Component\\Console\\Application->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#23 /usr/share/nginx/html/blog/vendor/laravel/framework/src/Illuminate/Foundation/Console/Kernel.php(122): Illuminate\\Console\\Application->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#24 /usr/share/nginx/html/blog/artisan(37): Illuminate\\Foundation\\Console\\Kernel->handle(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#25 {main}
+"} 
+[2019-03-27 01:08:26] Crawler.INFO: Log [{"URL":"http://cafebiz.vn/cong-nghe.rss?","start":"2019-03-27 01:08:26","function":"getData","request_data":[]}] []
+[2019-03-27 01:08:26] Crawler.INFO: Log [{"URL":"http://cafebiz.vn/cong-nghe.rss?","end":"2019-03-27 01:08:26","function":"getData","response_data":"<?xml version=\"1.0\" encoding=\"UTF-8\"?><rss version=\"2.0\"><channel><title><![CDATA[ Cafebiz.vn - Công nghệ - RSS Feed ]]></title><link><![CDATA[ http://cafebiz.vn//cong-nghe.chn.chn ]]></link><description><![CDATA[ Cafebiz.vn ]]></description><ttl>10</ttl><copyright>Cafebiz.vn</copyright><pubDate>Wed, 27 Mar 2019 08:08:10 GMT+7</pubDate><generator>Cafebiz.vn</generator><docs>http://cafebiz.vn</docs><image><title>Cafebiz.vn</title><url>https://cafebiz.cafebizcdn.vn/web_images/cafeBiz76.png</url><link>http://cafebiz.vn</link><width>76</width><height>76</height></image><item><title><![CDATA[ Quản trị nhân lực doanh nghiệp trong bối cảnh hội nhập quốc tế và cách mạng công nghiệp 4.0 ]]></title><link><![CDATA[ http://cafebiz.vn/quan-tri-nhan-luc-doanh-nghiep-trong-boi-canh-hoi-nhap-quoc-te-va-cach-mang-cong-nghiep-40-20190326141301101.chn ]]></link><guid isPermaLink=\"false\"><![CDATA[ e64e1a65-c1c2-4aaf-a28f-9fefbb97f579 ]]></guid><description><![CDATA[ <a href=\"http://cafebiz.vn/quan-tri-nhan-luc-doanh-nghiep-trong-boi-canh-hoi-nhap-quoc-te-va-cach-mang-cong-nghiep-40-20190326141301101.chn\" title=\"Quản trị nhân lực doanh nghiệp trong bối cảnh hội nhập quốc tế và cách mạng công nghiệp 4.0\"><img src=\"https://cafebiz.cafebizcdn.vn/zoom/110_69/2019/3/26/httpchannelvcmediavnprupload156201903img20190325154439662-15535844111921947960625.jpg\" width=\"110\" border=\"0\" alt=\"Quản trị nhân lực doanh nghiệp trong bối cảnh hội nhập quốc tế và cách mạng công nghiệp 4.0\" /></a><span>Trong bối cảnh hội nhập quốc tế và cách mạng công nghiệp 4.0, quản trị nhân sự sẽ cần được chuyển mình, thay đổi từ gốc rễ gồm cách tiếp cận, quy trình, phương pháp và công cụ thực hiện.</span> ]]></description><pubDate>Wed, 27 Mar 2019 08:00:00 GMT+7</pubDate></item><item><title><![CDATA[ Chỉ cần nằm yên một chỗ trong vòng 2 tháng sẽ được NASA tặng 19.000 USD, bạn có dám không? ]]></title><link><![CDATA[ http://cafebiz.vn/chi-can-nam-yen-mot-cho-trong-vong-2-thang-se-duoc-nasa-tang-19000-usd-ban-co-dam-khong-20190326190721898.chn ]]></link><guid isPermaLink=\"false\"><![CDATA[ 6fc8ddbf-8de2-4a21-bdcc-75c363a93979 ]]></guid><description><![CDATA[ <a href=\"http://cafebiz.vn/chi-can-nam-yen-mot-cho-trong-vong-2-thang-se-duoc-nasa-tang-19000-usd-ban-co-dam-khong-20190326190721898.chn\" title=\"Chỉ cần nằm yên một chỗ trong vòng 2 tháng sẽ được NASA tặng 19.000 USD, bạn có dám không?\"><img src=\"https://cafebiz.cafebizcdn.vn/zoom/110_69/2019/photo1553601980630-1553601980880-crop-15536019893611133846800.jpg\" width=\"110\" border=\"0\" alt=\"Chỉ cần nằm yên một chỗ trong vòng 2 tháng sẽ được NASA tặng 19.000 USD, bạn có dám không?\" /></a><span>19.000 USD tương đương với 441 triệu đồng.</span> ]]></description><pubDate>Tue, 26 Mar 2019 21:48:30 GMT+7</pubDate></item><item><title><![CDATA[ Những người nổi tiếng nào đã tham dự sự kiện tháng Ba của Apple vào đêm qua? ]]></title><link><![CDATA[ http://cafebiz.vn/nhung-nguoi-noi-tieng-nao-da-tham-du-su-kien-thang-ba-cua-apple-vao-dem-qua-20190326191358351.chn ]]></link><guid isPermaLink=\"false\"><![CDATA[ 85efce82-4ecc-47ed-9e8c-79d564f0fcb6 ]]></guid><description><![CDATA[ <a href=\"http://cafebiz.vn/nhung-nguoi-noi-tieng-nao-da-tham-du-su-kien-thang-ba-cua-apple-vao-dem-qua-20190326191358351.chn\" title=\"Những người nổi tiếng nào đã tham dự sự kiện tháng Ba của Apple vào đêm qua?\"><img src=\"https://cafebiz.cafebizcdn.vn/zoom/110_69/2019/photo1553602327045-1553602327412-crop-155360233571094682042.jpg\" width=\"110\" border=\"0\" alt=\"Những người nổi tiếng nào đã tham dự sự kiện tháng Ba của Apple vào đêm qua?\" /></a><span>Tại sự kiện này, gã khổng lồ công nghệ cũng đã tiết lộ đang sản xuất những nội dung độc quyền dành cho dịch vụ stream Apple TV Plus, với sự tham gia của một số đạo diễn và diễn viên nổi tiếng.</span> ]]></description><pubDate>Tue, 26 Mar 2019 20:16:15 GMT+7</pubDate></item><item><title><![CDATA[ 70 triệu thẻ nội địa tại Việt Nam có nguy cơ lọt vào tầm ngắm của hacker ]]></title><link><![CDATA[ http://cafebiz.vn/70-trieu-the-noi-dia-tai-viet-nam-co-nguy-co-lot-vao-tam-ngam-cua-hacker-20190326172210335.chn ]]></link><guid isPermaLink=\"false\"><![CDATA[ 134900c6-fb7a-40e3-8053-a604bf579470 ]]></guid><description><![CDATA[ <a href=\"http://cafebiz.vn/70-trieu-the-noi-dia-tai-viet-nam-co-nguy-co-lot-vao-tam-ngam-cua-hacker-20190326172210335.chn\" title=\"70 triệu thẻ nội địa tại Việt Nam có nguy cơ lọt vào tầm ngắm của hacker\"><img src=\"https://cafebiz.cafebizcdn.vn/zoom/110_69/2019/3/26/photo-1-1553595672831229097302-crop-1553595695340663600376.jpg\" width=\"110\" border=\"0\" alt=\"70 triệu thẻ nội địa tại Việt Nam có nguy cơ lọt vào tầm ngắm của hacker\" /></a><span>Trước thực tế hiện có khoảng 70 triệu thẻ nội địa, nếu chậm chuyển đổi thẻ từ sang thẻ chip, Việt Nam có thể trở thành tâm điểm của tội phạm thẻ trước vấn nạn các vụ giả mạo thẻ skimming (ăn cắp thông tin thẻ từ ATM) đang ngày càng gia tăng.</span> ]]></description><pubDate>Tue, 26 Mar 2019 20:11:00 GMT+7</pubDate></item><item><title><![CDATA[ Xe Tesla hóa sao xẹt sau khi va chạm với Mercedes-Benz rồi tông trúng 3 người ở Hồng Kông ]]></title><link><![CDATA[ http://cafebiz.vn/xe-tesla-hoa-sao-xet-sau-khi-va-cham-voi-mercedes-benz-roi-tong-trung-3-nguoi-o-hong-kong-20190326191905804.chn ]]></link><guid isPermaLink=\"false\"><![CDATA[ 759054cb-9980-44ae-8815-bfdbcfa65923 ]]></guid><description><![CDATA[ <a href=\"http://cafebiz.vn/xe-tesla-hoa-sao-xet-sau-khi-va-cham-voi-mercedes-benz-roi-tong-trung-3-nguoi-o-hong-kong-20190326191905804.chn\" title=\"Xe Tesla hóa sao xẹt sau khi va chạm với Mercedes-Benz rồi tông trúng 3 người ở Hồng Kông\"><img src=\"https://cafebiz.cafebizcdn.vn/zoom/110_69/2019/photo1553602619756-1553602619909-crop-15536026283501482423755.jpg\" width=\"110\" border=\"0\" alt=\"Xe Tesla hóa sao xẹt sau khi va chạm với Mercedes-Benz rồi tông trúng 3 người ở Hồng Kông\" /></a><span>Theo cảnh sát, vụ việc xảy ra tại ngã ba đường Princess Margaret và Argyle. Cụ thể, chiếc Mercedes-Benz màu bạc hướng về khu Vượng Giác dọc theo đường Argyle, đã đâm phải xe Tesla màu đen, đang hướng về Tiêm Sa Chủy dọc theo đường Princess Margaret.</span> ]]></description><pubDate>Tue, 26 Mar 2019 19:54:58 GMT+7</pubDate></item><item><title><![CDATA[ Giáo sư chiến lược thị trường cho rằng Apple đang làm sai tôn chỉ của Steve Jobs và điều đó rất có hại ]]></title><link><![CDATA[ http://cafebiz.vn/giao-su-chien-luoc-thi-truong-cho-rang-apple-dang-lam-sai-ton-chi-cua-steve-jobs-va-dieu-do-rat-co-hai-20190326191613101.chn ]]></link><guid isPermaLink=\"false\"><![CDATA[ 16d5b91b-a459-41d3-887f-886b4b723f74 ]]></guid><description><![CDATA[ <a href=\"http://cafebiz.vn/giao-su-chien-luoc-thi-truong-cho-rang-apple-dang-lam-sai-ton-chi-cua-steve-jobs-va-dieu-do-rat-co-hai-20190326191613101.chn\" title=\"Giáo sư chiến lược thị trường cho rằng Apple đang làm sai tôn chỉ của Steve Jobs và điều đó rất có hại\"><img src=\"https://cafebiz.cafebizcdn.vn/zoom/110_69/2019/photo1553602484455-1553602484685-crop-15536024939101088808224.jpg\" width=\"110\" border=\"0\" alt=\"Giáo sư chiến lược thị trường cho rằng Apple đang làm sai tôn chỉ của Steve Jobs và điều đó rất có hại\" /></a><span>Liệu rằng Apple có quyết định sai lầm?</span> ]]></description><pubDate>Tue, 26 Mar 2019 19:51:42 GMT+7</pubDate></item><item><title><![CDATA[ Thử nghiệm thành công thuốc tránh thai cho nam giới trên người - cuộc cách mạng mới cho \"chuyện ấy\" đã đến rồi ]]></title><link><![CDATA[ http://cafebiz.vn/thu-nghiem-thanh-cong-thuoc-tranh-thai-cho-nam-gioi-tren-nguoi-cuoc-cach-mang-moi-cho-chuyen-ay-da-den-roi-20190326194226898.chn ]]></link><guid isPermaLink=\"false\"><![CDATA[ c2f004d2-146e-4249-b3cf-39c257f4ab69 ]]></guid><description><![CDATA[ <a href=\"http://cafebiz.vn/thu-nghiem-thanh-cong-thuoc-tranh-thai-cho-nam-gioi-tren-nguoi-cuoc-cach-mang-moi-cho-chuyen-ay-da-den-roi-20190326194226898.chn\" title=\"Thử nghiệm thành công thuốc tránh thai cho nam giới trên người - cuộc cách mạng mới cho \"chuyện ấy\" đã đến rồi\"><img src=\"https://cafebiz.cafebizcdn.vn/zoom/110_69/2019/photo1553604099645-1553604100047-crop-1553604108622140781393.jpg\" width=\"110\" border=\"0\" alt=\"Thử nghiệm thành công thuốc tránh thai cho nam giới trên người - cuộc cách mạng mới cho \"chuyện ấy\" đã đến rồi\" /></a><span>Thuốc tránh thai cho đàn ông sắp \"về làng\" rồi mọi người ơi.</span> ]]></description><pubDate>Tue, 26 Mar 2019 19:46:52 GMT+7</pubDate></item><item><title><![CDATA[ Trung Quốc vừa có một ứng dụng chấm điểm gần nửa tỷ thanh niên nước nhà: Điểm cao được ưu đãi từ việc làm, nhà ở, hẹn hò và thậm chí cả kết hôn ]]></title><link><![CDATA[ http://cafebiz.vn/trung-quoc-vua-co-mot-ung-dung-cham-diem-gan-nua-ty-thanh-nien-nuoc-nha-diem-cao-duoc-uu-dai-tu-viec-lam-nha-o-hen-ho-va-tham-chi-ca-ket-hon-20190326113552851.chn ]]></link><guid isPermaLink=\"false\"><![CDATA[ 646f4afb-d755-46a4-ac05-d3975ee7468a ]]></guid><description><![CDATA[ <a href=\"http://cafebiz.vn/trung-quoc-vua-co-mot-ung-dung-cham-diem-gan-nua-ty-thanh-nien-nuoc-nha-diem-cao-duoc-uu-dai-tu-viec-lam-nha-o-hen-ho-va-tham-chi-ca-ket-hon-20190326113552851.chn\" title=\"Trung Quốc vừa có một ứng dụng chấm điểm gần nửa tỷ thanh niên nước nhà: Điểm cao được ưu đãi từ việc làm, nhà ở, hẹn hò và thậm chí cả kết hôn\"><img src=\"https://cafebiz.cafebizcdn.vn/zoom/110_69/2019/3/26/1-15535743414671748045383-crop-15535743464022044605749.jpg\" width=\"110\" border=\"0\" alt=\"Trung Quốc vừa có một ứng dụng chấm điểm gần nửa tỷ thanh niên nước nhà: Điểm cao được ưu đãi từ việc làm, nhà ở, hẹn hò và thậm chí cả kết hôn\" /></a><span>Theo Chủ tịch của nhà phát triển ứng dụng, chúng ta có thể coi tín nhiệm xã hội là tài sản vô hình, một thứ mà khi được dùng đúng cách có thể mang lại lợi ích cho mọi người, đặc biệt là giới trẻ.</span> ]]></description><pubDate>Tue, 26 Mar 2019 15:53:47 GMT+7</pubDate></item><item><title><![CDATA[ Tất tật về Apple Card: thẻ tín dụng không phí hàng năm, không phí trả chậm, không phí quốc tế, không mã thẻ, không CVV của Apple ]]></title><link><![CDATA[ http://cafebiz.vn/tat-tat-ve-apple-card-the-tin-dung-khong-phi-hang-nam-khong-phi-tra-cham-khong-phi-quoc-te-khong-ma-the-khong-cvv-cua-apple-2019032615013157.chn ]]></link><guid isPermaLink=\"false\"><![CDATA[ 005504b3-468f-4493-b61d-e163bf4f16c3 ]]></guid><description><![CDATA[ <a href=\"http://cafebiz.vn/tat-tat-ve-apple-card-the-tin-dung-khong-phi-hang-nam-khong-phi-tra-cham-khong-phi-quoc-te-khong-ma-the-khong-cvv-cua-apple-2019032615013157.chn\" title=\"Tất tật về Apple Card: thẻ tín dụng không phí hàng năm, không phí trả chậm, không phí quốc tế, không mã thẻ, không CVV của Apple\"><img src=\"https://cafebiz.cafebizcdn.vn/zoom/110_69/2019/photo1553587179782-1553587179980-crop-15535871923362143941036.jpg\" width=\"110\" border=\"0\" alt=\"Tất tật về Apple Card: thẻ tín dụng không phí hàng năm, không phí trả chậm, không phí quốc tế, không mã thẻ, không CVV của Apple\" /></a><span>Không chỉ được miễn hàng loạt loại phí thường thấy, Apple Card còn mang đến nhiều ưu đãi về hoàn tiền cũng như trang bị nhiều lớp bảo mật chắc chắn.</span> ]]></description><pubDate>Tue, 26 Mar 2019 15:19:06 GMT+7</pubDate></item><item><title><![CDATA[ Phó chủ tịch hiệp hội TMĐT: Amazon chưa có chương trình vào Việt Nam ]]></title><link><![CDATA[ http://cafebiz.vn/pho-chu-tich-hiep-hoi-tmdt-amazon-chua-co-chuong-trinh-vao-viet-nam-20190326142315054.chn ]]></link><guid isPermaLink=\"false\"><![CDATA[ 44d7f016-8039-4047-a98f-7252ac46d9d9 ]]></guid><description><![CDATA[ <a href=\"http://cafebiz.vn/pho-chu-tich-hiep-hoi-tmdt-amazon-chua-co-chuong-trinh-vao-viet-nam-20190326142315054.chn\" title=\"Phó chủ tịch hiệp hội TMĐT: Amazon chưa có chương trình vào Việt Nam\"><img src=\"https://cafebiz.cafebizcdn.vn/zoom/110_69/2019/1/17/cao-sao-vang-1547699247058206267876-crop-1553584883473851359894.png\" width=\"110\" border=\"0\" alt=\"Phó chủ tịch hiệp hội TMĐT: Amazon chưa có chương trình vào Việt Nam\" /></a><span>Theo ông, các chương trình triển khai hiện nay chỉ nhằm hỗ trợ người Việt bán hàng trên Amazon thuận lợi hơn.</span> ]]></description><pubDate>Tue, 26 Mar 2019 15:02:00 GMT+7</pubDate></item><item><title><![CDATA[ Nguời Việt chẳng có lý do gì để hào hứng với các dịch vụ Apple vừa ra mắt ]]></title><link><![CDATA[ http://cafebiz.vn/nguoi-viet-chang-co-ly-do-gi-de-hao-hung-voi-cac-dich-vu-apple-vua-ra-mat-20190326113945304.chn ]]></link><guid isPermaLink=\"false\"><![CDATA[ 8ead724d-477e-43f9-80c8-17dee0d79f97 ]]></guid><description><![CDATA[ <a href=\"http://cafebiz.vn/nguoi-viet-chang-co-ly-do-gi-de-hao-hung-voi-cac-dich-vu-apple-vua-ra-mat-20190326113945304.chn\" title=\"Nguời Việt chẳng có lý do gì để hào hứng với các dịch vụ Apple vừa ra mắt\"><img src=\"https://cafebiz.cafebizcdn.vn/zoom/110_69/2019/photo1553575128953-1553575129166-crop-15535751403381987650802.jpg\" width=\"110\" border=\"0\" alt=\"Nguời Việt chẳng có lý do gì để hào hứng với các dịch vụ Apple vừa ra mắt\" /></a><span>Những dịch vụ như Apple TV+, Apple TV Channels, Apple Card, Apple News+ và Apple Arcade... đều không có mặt tại Việt Nam hoặc không phù hợp với tâm lý người Việt.</span> ]]></description><pubDate>Tue, 26 Mar 2019 14:43:33 GMT+7</pubDate></item><item><title><![CDATA[ Sự kiện đêm qua đánh dấu quyết tâm xóa bỏ cái tên \"Công ty iPhone\" của Apple ]]></title><link><![CDATA[ http://cafebiz.vn/su-kien-dem-qua-danh-dau-quyet-tam-xoa-bo-cai-ten-cong-ty-iphone-cua-apple-20190326134122226.chn ]]></link><guid isPermaLink=\"false\"><![CDATA[ 67157f4e-5e24-4e61-b1f0-db39b805ad90 ]]></guid><description><![CDATA[ <a href=\"http://cafebiz.vn/su-kien-dem-qua-danh-dau-quyet-tam-xoa-bo-cai-ten-cong-ty-iphone-cua-apple-20190326134122226.chn\" title=\"Sự kiện đêm qua đánh dấu quyết tâm xóa bỏ cái tên \"Công ty iPhone\" của Apple\"><img src=\"https://cafebiz.cafebizcdn.vn/zoom/110_69/2019/photo1553581678618-1553581678825-crop-15535816916891240381285.jpg\" width=\"110\" border=\"0\" alt=\"Sự kiện đêm qua đánh dấu quyết tâm xóa bỏ cái tên \"Công ty iPhone\" của Apple\" /></a><span>Ngay từ khi khởi đầu, khi video được trình chiếu, mọi người đã nhận ra rằng đây là một sự kiện rất khác biệt của Apple.</span> ]]></description><pubDate>Tue, 26 Mar 2019 14:17:41 GMT+7</pubDate></item><item><title><![CDATA[ Tối nay Facebook tung tính năng \"hẹn hò\" tại Việt Nam, bạn đã sẵn sàng dùng thử? ]]></title><link><![CDATA[ http://cafebiz.vn/toi-nay-facebook-tung-tinh-nang-hen-ho-tai-viet-nam-ban-da-san-sang-dung-thu-20190326134441835.chn ]]></link><guid isPermaLink=\"false\"><![CDATA[ 2ae27514-21db-4643-98f0-cff401f3f9b3 ]]></guid><description><![CDATA[ <a href=\"http://cafebiz.vn/toi-nay-facebook-tung-tinh-nang-hen-ho-tai-viet-nam-ban-da-san-sang-dung-thu-20190326134441835.chn\" title=\"Tối nay Facebook tung tính năng \"hẹn hò\" tại Việt Nam, bạn đã sẵn sàng dùng thử?\"><img src=\"https://cafebiz.cafebizcdn.vn/zoom/110_69/2019/photo1553582607581-1553582607788-crop-15535826213681494639472.jpg\" width=\"110\" border=\"0\" alt=\"Tối nay Facebook tung tính năng \"hẹn hò\" tại Việt Nam, bạn đã sẵn sàng dùng thử?\" /></a><span>Tính năng \"Gặp gỡ bạn mới\" được Facebook tung ra hôm nay có thể được dùng như một công cụ hẹn hò mới tại Việt Nam.</span> ]]></description><pubDate>Tue, 26 Mar 2019 14:14:08 GMT+7</pubDate></item><item><title><![CDATA[ Đây là lý do vì sao chiếc thẻ tín dụng Apple Card tuyệt đẹp này lại là một cạm bẫy ]]></title><link><![CDATA[ http://cafebiz.vn/day-la-ly-do-vi-sao-chiec-the-tin-dung-apple-card-tuyet-dep-nay-lai-la-mot-cam-bay-2019032611111132.chn ]]></link><guid isPermaLink=\"false\"><![CDATA[ 88fca54e-9ba5-420e-9cfd-99cf6a127970 ]]></guid><description><![CDATA[ <a href=\"http://cafebiz.vn/day-la-ly-do-vi-sao-chiec-the-tin-dung-apple-card-tuyet-dep-nay-lai-la-mot-cam-bay-2019032611111132.chn\" title=\"Đây là lý do vì sao chiếc thẻ tín dụng Apple Card tuyệt đẹp này lại là một cạm bẫy\"><img src=\"https://cafebiz.cafebizcdn.vn/zoom/110_69/2019/photo1553573388324-1553573388819-crop-15535734044531474841073.jpg\" width=\"110\" border=\"0\" alt=\"Đây là lý do vì sao chiếc thẻ tín dụng Apple Card tuyệt đẹp này lại là một cạm bẫy\" /></a><span>Một chiếc thẻ tín dụng trước hết cần phải đẹp mắt, không ai nghĩ đến điều đó mà chỉ có Apple.</span> ]]></description><pubDate>Tue, 26 Mar 2019 13:06:00 GMT+7</pubDate></item><item><title><![CDATA[ iOS 12.2 chính thức ra mắt và đã có thể tải về ]]></title><link><![CDATA[ http://cafebiz.vn/ios-122-chinh-thuc-ra-mat-va-da-co-the-tai-ve-20190326113806976.chn ]]></link><guid isPermaLink=\"false\"><![CDATA[ f29655e0-fe23-42ab-b814-56983cb0f52b ]]></guid><description><![CDATA[ <a href=\"http://cafebiz.vn/ios-122-chinh-thuc-ra-mat-va-da-co-the-tai-ve-20190326113806976.chn\" title=\"iOS 12.2 chính thức ra mắt và đã có thể tải về\"><img src=\"https://cafebiz.cafebizcdn.vn/zoom/110_69/2019/photo1553575029212-1553575029377-crop-15535750380081718444315.jpg\" width=\"110\" border=\"0\" alt=\"iOS 12.2 chính thức ra mắt và đã có thể tải về\" /></a><span>iOS 12.2 ra mắt cùng Apple News Plus, hỗ trợ tai nghe AirPods thế hệ hai và bổ sung thêm 4 Animoji mới.</span> ]]></description><pubDate>Tue, 26 Mar 2019 11:40:19 GMT+7</pubDate></item><item><title><![CDATA[ Trước giờ tăng lệ phí trước bạ: Đây là mẫu xe bán tải giảm giá \"khủng\", rẻ nhất Việt Nam ]]></title><link><![CDATA[ http://cafebiz.vn/truoc-gio-tang-le-phi-truoc-ba-day-la-mau-xe-ban-tai-giam-gia-khung-re-nhat-viet-nam-20190326105257757.chn ]]></link><guid isPermaLink=\"false\"><![CDATA[ 61b8267a-b16c-4787-a5c1-e6c86ca9b796 ]]></guid><description><![CDATA[ <a href=\"http://cafebiz.vn/truoc-gio-tang-le-phi-truoc-ba-day-la-mau-xe-ban-tai-giam-gia-khung-re-nhat-viet-nam-20190326105257757.chn\" title=\"Trước giờ tăng lệ phí trước bạ: Đây là mẫu xe bán tải giảm giá \"khủng\", rẻ nhất Việt Nam\"><img src=\"https://cafebiz.cafebizcdn.vn/zoom/110_69/2019/photo1553572264017-1553572264222-crop-1553572288955180363676.jpg\" width=\"110\" border=\"0\" alt=\"Trước giờ tăng lệ phí trước bạ: Đây là mẫu xe bán tải giảm giá \"khủng\", rẻ nhất Việt Nam\" /></a><span>Mẫu xe Isuzu D-Max bất ngờ giảm giá tới 70 triệu đồng trước thời điểm tăng phí lệ trước bạ xe bán tải, trở thành mẫu xe có giá bán thấp nhất trong cùng phân khúc.</span> ]]></description><pubDate>Tue, 26 Mar 2019 11:16:00 GMT+7</pubDate></item><item><title><![CDATA[ Cô gái 24 tuổi chuyên khám phá lỗ hổng của Facebook, Twitter ]]></title><link><![CDATA[ http://cafebiz.vn/co-gai-24-tuoi-chuyen-kham-pha-lo-hong-cua-facebook-twitter-20190326085428335.chn ]]></link><guid isPermaLink=\"false\"><![CDATA[ 73e31d91-ee89-4b87-afbd-1510dd3d8985 ]]></guid><description><![CDATA[ <a href=\"http://cafebiz.vn/co-gai-24-tuoi-chuyen-kham-pha-lo-hong-cua-facebook-twitter-20190326085428335.chn\" title=\"Cô gái 24 tuổi chuyên khám phá lỗ hổng của Facebook, Twitter\"><img src=\"https://cafebiz.cafebizcdn.vn/zoom/110_69/2019/3/26/photo-1-1553565189018550712200-crop-15535652036971761403790.jpg\" width=\"110\" border=\"0\" alt=\"Cô gái 24 tuổi chuyên khám phá lỗ hổng của Facebook, Twitter\" /></a><span>Bằng cách tự học, cô gái 24 tuổi nhiều lần tự mình tìm ra những lỗ hổng hoặc tính năng chưa được công bố ẩn trên các ứng dụng nổi tiếng như Facebook, Instagram, Twitter…</span> ]]></description><pubDate>Tue, 26 Mar 2019 10:28:02 GMT+7</pubDate></item><item><title><![CDATA[ 5 phút để xem lại toàn bộ sự kiện của Apple đêm qua: ra mắt News+, thẻ tín dụng, nền tảng game Arcade và dịch vụ TV+ ]]></title><link><![CDATA[ http://cafebiz.vn/5-phut-de-xem-lai-toan-bo-su-kien-cua-apple-dem-qua-ra-mat-news-the-tin-dung-nen-tang-game-arcade-va-dich-vu-tv-20190326084511789.chn ]]></link><guid isPermaLink=\"false\"><![CDATA[ 4855a622-6938-4ee6-b936-57ba402097fd ]]></guid><description><![CDATA[ <a href=\"http://cafebiz.vn/5-phut-de-xem-lai-toan-bo-su-kien-cua-apple-dem-qua-ra-mat-news-the-tin-dung-nen-tang-game-arcade-va-dich-vu-tv-20190326084511789.chn\" title=\"5 phút để xem lại toàn bộ sự kiện của Apple đêm qua: ra mắt News+, thẻ tín dụng, nền tảng game Arcade và dịch vụ TV+\"><img src=\"https://cafebiz.cafebizcdn.vn/zoom/110_69/2019/photo1553564554065-1553564554554-crop-15535645636941291400111.jpg\" width=\"110\" border=\"0\" alt=\"5 phút để xem lại toàn bộ sự kiện của Apple đêm qua: ra mắt News+, thẻ tín dụng, nền tảng game Arcade và dịch vụ TV+\" /></a><span>Sự kiện đêm qua thể hiện rõ kế hoạch dịch chuyển trọng tâm sang dịch vụ/phần mềm của Apple.</span> ]]></description><pubDate>Tue, 26 Mar 2019 08:47:28 GMT+7</pubDate></item><item><title><![CDATA[ Apple ra mắt thẻ tín dụng của riêng mình, không có dãy số tài khoản, không có mã CVV ]]></title><link><![CDATA[ http://cafebiz.vn/apple-ra-mat-the-tin-dung-cua-rieng-minh-khong-co-day-so-tai-khoan-khong-co-ma-cvv-20190326084137492.chn ]]></link><guid isPermaLink=\"false\"><![CDATA[ 27c11006-a514-4b2f-94c1-271bc6b24aa8 ]]></guid><description><![CDATA[ <a href=\"http://cafebiz.vn/apple-ra-mat-the-tin-dung-cua-rieng-minh-khong-co-day-so-tai-khoan-khong-co-ma-cvv-20190326084137492.chn\" title=\"Apple ra mắt thẻ tín dụng của riêng mình, không có dãy số tài khoản, không có mã CVV\"><img src=\"https://cafebiz.cafebizcdn.vn/zoom/110_69/2019/photo1553564400705-1553564400855-crop-15535644114241386166794.jpg\" width=\"110\" border=\"0\" alt=\"Apple ra mắt thẻ tín dụng của riêng mình, không có dãy số tài khoản, không có mã CVV\" /></a><span>Apple đã ra mắt một chiếc thẻ tín dụng của riêng mình với tên gọi Apple Card, để giúp thanh toán tại những nơi chưa hỗ trợ Apple Pay.</span> ]]></description><pubDate>Tue, 26 Mar 2019 08:43:41 GMT+7</pubDate></item><item><title><![CDATA[ Grabpay by Moca vs Momo: Cuộc chiến \"bỏng rát\" của hai đại gia mảng payment trên từng trận địa trà sữa, bánh mỳ, chè, ốc vỉa hè ]]></title><link><![CDATA[ http://cafebiz.vn/grabpay-by-moca-vs-momo-cuoc-chien-bong-rat-cua-hai-dai-gia-mang-payment-tren-tung-tran-dia-tra-sua-banh-my-che-oc-via-he-20190325165217757.chn ]]></link><guid isPermaLink=\"false\"><![CDATA[ afcfc690-c7fb-4b25-b09e-8fb09309104c ]]></guid><description><![CDATA[ <a href=\"http://cafebiz.vn/grabpay-by-moca-vs-momo-cuoc-chien-bong-rat-cua-hai-dai-gia-mang-payment-tren-tung-tran-dia-tra-sua-banh-my-che-oc-via-he-20190325165217757.chn\" title=\"Grabpay by Moca vs Momo: Cuộc chiến \"bỏng rát\" của hai đại gia mảng payment trên từng trận địa trà sữa, bánh mỳ, chè, ốc vỉa hè\"><img src=\"https://cafebiz.cafebizcdn.vn/zoom/110_69/2019/3/25/1-1553506662028169656746-crop-15535066757331922614235.jpg\" width=\"110\" border=\"0\" alt=\"Grabpay by Moca vs Momo: Cuộc chiến \"bỏng rát\" của hai đại gia mảng payment trên từng trận địa trà sữa, bánh mỳ, chè, ốc vỉa hè\" /></a><span>Bàn thanh toán tại Soya Garden Vũ Trọng Phụng có tới 4 góc có sự hiện diện của Grab: Một miếng dán quảng cáo Grabfood, một miếng dán quảng cáo Grabpay by Moca, một quảng cáo khuyến mãi giảm 30% nếu thanh toán Grabpay by Moca và một biển nhỏ cố định đặt mã QR của ứng dụng thanh toán này, che một phần biển đặt mã QR của Momo phía sau.</span> ]]></description><pubDate>Tue, 26 Mar 2019 08:07:00 GMT+7</pubDate></item></channel></rss>"}] []
+[2019-03-27 01:08:29] Crawler.INFO: Log [{"URL":"http://cafebiz.vn/quan-tri-nhan-luc-doanh-nghiep-trong-boi-canh-hoi-nhap-quoc-te-va-cach-mang-cong-nghiep-40-20190326141301101.chn?","start":"2019-03-27 01:08:29","function":"getData","request_data":[]}] []
+[2019-03-27 01:08:29] Crawler.INFO: Log [{"URL":"http://cafebiz.vn/quan-tri-nhan-luc-doanh-nghiep-trong-boi-canh-hoi-nhap-quoc-te-va-cach-mang-cong-nghiep-40-20190326141301101.chn?","end":"2019-03-27 01:08:29","function":"getData","response_data":{"client":"[object] (Goutte\\Client: {})","crawler":"[object] (Symfony\\Component\\DomCrawler\\Crawler: {})"}}] []
+[2019-03-27 01:08:29] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:08:30] Crawler.INFO: Log [{"URL":"https://finance.yahoo.com/tech?","start":"2019-03-27 01:08:30","function":"getData","request_data":[]}] []
+[2019-03-27 01:08:30] Crawler.INFO: Log [{"URL":"http://cafebiz.vn/chi-can-nam-yen-mot-cho-trong-vong-2-thang-se-duoc-nasa-tang-19000-usd-ban-co-dam-khong-20190326190721898.chn?","start":"2019-03-27 01:08:30","function":"getData","request_data":[]}] []
+[2019-03-27 01:08:30] Crawler.INFO: Log [{"URL":"http://cafebiz.vn/chi-can-nam-yen-mot-cho-trong-vong-2-thang-se-duoc-nasa-tang-19000-usd-ban-co-dam-khong-20190326190721898.chn?","end":"2019-03-27 01:08:30","function":"getData","response_data":{"client":"[object] (Goutte\\Client: {})","crawler":"[object] (Symfony\\Component\\DomCrawler\\Crawler: {})"}}] []
+[2019-03-27 01:08:30] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:08:32] Crawler.INFO: Log [{"URL":"http://cafebiz.vn/nhung-nguoi-noi-tieng-nao-da-tham-du-su-kien-thang-ba-cua-apple-vao-dem-qua-20190326191358351.chn?","start":"2019-03-27 01:08:32","function":"getData","request_data":[]}] []
+[2019-03-27 01:08:32] Crawler.INFO: Log [{"URL":"http://cafebiz.vn/nhung-nguoi-noi-tieng-nao-da-tham-du-su-kien-thang-ba-cua-apple-vao-dem-qua-20190326191358351.chn?","end":"2019-03-27 01:08:32","function":"getData","response_data":{"client":"[object] (Goutte\\Client: {})","crawler":"[object] (Symfony\\Component\\DomCrawler\\Crawler: {})"}}] []
+[2019-03-27 01:08:32] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:08:32] Crawler.INFO: Log [{"URL":"https://finance.yahoo.com/tech?","end":"2019-03-27 01:08:32","function":"getData","response_data":{"client":"[object] (Goutte\\Client: {})","crawler":"[object] (Symfony\\Component\\DomCrawler\\Crawler: {})"}}] []
+[2019-03-27 01:08:33] Crawler.INFO: Log [{"URL":"http://cafebiz.vn/70-trieu-the-noi-dia-tai-viet-nam-co-nguy-co-lot-vao-tam-ngam-cua-hacker-20190326172210335.chn?","start":"2019-03-27 01:08:33","function":"getData","request_data":[]}] []
+[2019-03-27 01:08:33] Crawler.INFO: Log [{"URL":"http://cafebiz.vn/70-trieu-the-noi-dia-tai-viet-nam-co-nguy-co-lot-vao-tam-ngam-cua-hacker-20190326172210335.chn?","end":"2019-03-27 01:08:33","function":"getData","response_data":{"client":"[object] (Goutte\\Client: {})","crawler":"[object] (Symfony\\Component\\DomCrawler\\Crawler: {})"}}] []
+[2019-03-27 01:08:33] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:08:34] Crawler.INFO: Log [{"URL":"http://cafebiz.vn/xe-tesla-hoa-sao-xet-sau-khi-va-cham-voi-mercedes-benz-roi-tong-trung-3-nguoi-o-hong-kong-20190326191905804.chn?","start":"2019-03-27 01:08:34","function":"getData","request_data":[]}] []
+[2019-03-27 01:08:34] Crawler.INFO: Log [{"URL":"http://cafebiz.vn/xe-tesla-hoa-sao-xet-sau-khi-va-cham-voi-mercedes-benz-roi-tong-trung-3-nguoi-o-hong-kong-20190326191905804.chn?","end":"2019-03-27 01:08:34","function":"getData","response_data":{"client":"[object] (Goutte\\Client: {})","crawler":"[object] (Symfony\\Component\\DomCrawler\\Crawler: {})"}}] []
+[2019-03-27 01:08:34] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:08:35] Crawler.INFO: Log [{"URL":"http://cafebiz.vn/giao-su-chien-luoc-thi-truong-cho-rang-apple-dang-lam-sai-ton-chi-cua-steve-jobs-va-dieu-do-rat-co-hai-20190326191613101.chn?","start":"2019-03-27 01:08:35","function":"getData","request_data":[]}] []
+[2019-03-27 01:08:35] Crawler.INFO: Log [{"URL":"http://cafebiz.vn/giao-su-chien-luoc-thi-truong-cho-rang-apple-dang-lam-sai-ton-chi-cua-steve-jobs-va-dieu-do-rat-co-hai-20190326191613101.chn?","end":"2019-03-27 01:08:35","function":"getData","response_data":{"client":"[object] (Goutte\\Client: {})","crawler":"[object] (Symfony\\Component\\DomCrawler\\Crawler: {})"}}] []
+[2019-03-27 01:08:35] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:08:35] Crawler.INFO: Log [{"URL":"http://cafebiz.vn/thu-nghiem-thanh-cong-thuoc-tranh-thai-cho-nam-gioi-tren-nguoi-cuoc-cach-mang-moi-cho-chuyen-ay-da-den-roi-20190326194226898.chn?","start":"2019-03-27 01:08:35","function":"getData","request_data":[]}] []
+[2019-03-27 01:08:36] Crawler.INFO: Log [{"URL":"http://cafebiz.vn/thu-nghiem-thanh-cong-thuoc-tranh-thai-cho-nam-gioi-tren-nguoi-cuoc-cach-mang-moi-cho-chuyen-ay-da-den-roi-20190326194226898.chn?","end":"2019-03-27 01:08:36","function":"getData","response_data":{"client":"[object] (Goutte\\Client: {})","crawler":"[object] (Symfony\\Component\\DomCrawler\\Crawler: {})"}}] []
+[2019-03-27 01:08:36] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:08:36] Crawler.INFO: Log [{"URL":"http://cafebiz.vn/trung-quoc-vua-co-mot-ung-dung-cham-diem-gan-nua-ty-thanh-nien-nuoc-nha-diem-cao-duoc-uu-dai-tu-viec-lam-nha-o-hen-ho-va-tham-chi-ca-ket-hon-20190326113552851.chn?","start":"2019-03-27 01:08:36","function":"getData","request_data":[]}] []
+[2019-03-27 01:08:37] Crawler.INFO: Log [{"URL":"http://cafebiz.vn/trung-quoc-vua-co-mot-ung-dung-cham-diem-gan-nua-ty-thanh-nien-nuoc-nha-diem-cao-duoc-uu-dai-tu-viec-lam-nha-o-hen-ho-va-tham-chi-ca-ket-hon-20190326113552851.chn?","end":"2019-03-27 01:08:37","function":"getData","response_data":{"client":"[object] (Goutte\\Client: {})","crawler":"[object] (Symfony\\Component\\DomCrawler\\Crawler: {})"}}] []
+[2019-03-27 01:08:37] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:08:37] Crawler.INFO: Log [{"URL":"https://www.gadgetsnow.com/tech-news?","start":"2019-03-27 01:08:37","function":"getData","request_data":[]}] []
+[2019-03-27 01:08:37] Crawler.INFO: Log [{"URL":"http://cafebiz.vn/tat-tat-ve-apple-card-the-tin-dung-khong-phi-hang-nam-khong-phi-tra-cham-khong-phi-quoc-te-khong-ma-the-khong-cvv-cua-apple-2019032615013157.chn?","start":"2019-03-27 01:08:37","function":"getData","request_data":[]}] []
+[2019-03-27 01:08:38] Crawler.INFO: Log [{"URL":"http://cafebiz.vn/tat-tat-ve-apple-card-the-tin-dung-khong-phi-hang-nam-khong-phi-tra-cham-khong-phi-quoc-te-khong-ma-the-khong-cvv-cua-apple-2019032615013157.chn?","end":"2019-03-27 01:08:38","function":"getData","response_data":{"client":"[object] (Goutte\\Client: {})","crawler":"[object] (Symfony\\Component\\DomCrawler\\Crawler: {})"}}] []
+[2019-03-27 01:08:38] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:08:38] Crawler.INFO: Log [{"URL":"https://www.gadgetsnow.com/tech-news?","end":"2019-03-27 01:08:38","function":"getData","response_data":{"client":"[object] (Goutte\\Client: {})","crawler":"[object] (Symfony\\Component\\DomCrawler\\Crawler: {})"}}] []
+[2019-03-27 01:08:38] Crawler.INFO: Log [{"URL":"http://cafebiz.vn/pho-chu-tich-hiep-hoi-tmdt-amazon-chua-co-chuong-trinh-vao-viet-nam-20190326142315054.chn?","start":"2019-03-27 01:08:38","function":"getData","request_data":[]}] []
+[2019-03-27 01:08:39] Crawler.INFO: Log [{"URL":"http://cafebiz.vn/pho-chu-tich-hiep-hoi-tmdt-amazon-chua-co-chuong-trinh-vao-viet-nam-20190326142315054.chn?","end":"2019-03-27 01:08:39","function":"getData","response_data":{"client":"[object] (Goutte\\Client: {})","crawler":"[object] (Symfony\\Component\\DomCrawler\\Crawler: {})"}}] []
+[2019-03-27 01:08:39] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:08:40] Crawler.INFO: Log [{"URL":"http://cafebiz.vn/nguoi-viet-chang-co-ly-do-gi-de-hao-hung-voi-cac-dich-vu-apple-vua-ra-mat-20190326113945304.chn?","start":"2019-03-27 01:08:40","function":"getData","request_data":[]}] []
+[2019-03-27 01:08:40] Crawler.INFO: Log [{"URL":"http://cafebiz.vn/nguoi-viet-chang-co-ly-do-gi-de-hao-hung-voi-cac-dich-vu-apple-vua-ra-mat-20190326113945304.chn?","end":"2019-03-27 01:08:40","function":"getData","response_data":{"client":"[object] (Goutte\\Client: {})","crawler":"[object] (Symfony\\Component\\DomCrawler\\Crawler: {})"}}] []
+[2019-03-27 01:08:41] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:08:43] Crawler.INFO: Log [{"URL":"http://cafebiz.vn/su-kien-dem-qua-danh-dau-quyet-tam-xoa-bo-cai-ten-cong-ty-iphone-cua-apple-20190326134122226.chn?","start":"2019-03-27 01:08:43","function":"getData","request_data":[]}] []
+[2019-03-27 01:08:43] Crawler.INFO: Log [{"URL":"http://cafebiz.vn/su-kien-dem-qua-danh-dau-quyet-tam-xoa-bo-cai-ten-cong-ty-iphone-cua-apple-20190326134122226.chn?","end":"2019-03-27 01:08:43","function":"getData","response_data":{"client":"[object] (Goutte\\Client: {})","crawler":"[object] (Symfony\\Component\\DomCrawler\\Crawler: {})"}}] []
+[2019-03-27 01:08:43] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:08:44] Crawler.INFO: Log [{"URL":"http://cafebiz.vn/toi-nay-facebook-tung-tinh-nang-hen-ho-tai-viet-nam-ban-da-san-sang-dung-thu-20190326134441835.chn?","start":"2019-03-27 01:08:44","function":"getData","request_data":[]}] []
+[2019-03-27 01:08:44] Crawler.INFO: Log [{"URL":"http://cafebiz.vn/toi-nay-facebook-tung-tinh-nang-hen-ho-tai-viet-nam-ban-da-san-sang-dung-thu-20190326134441835.chn?","end":"2019-03-27 01:08:44","function":"getData","response_data":{"client":"[object] (Goutte\\Client: {})","crawler":"[object] (Symfony\\Component\\DomCrawler\\Crawler: {})"}}] []
+[2019-03-27 01:08:45] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:08:46] Crawler.INFO: Log [{"URL":"http://cafebiz.vn/day-la-ly-do-vi-sao-chiec-the-tin-dung-apple-card-tuyet-dep-nay-lai-la-mot-cam-bay-2019032611111132.chn?","start":"2019-03-27 01:08:46","function":"getData","request_data":[]}] []
+[2019-03-27 01:08:46] Crawler.INFO: Log [{"URL":"http://cafebiz.vn/day-la-ly-do-vi-sao-chiec-the-tin-dung-apple-card-tuyet-dep-nay-lai-la-mot-cam-bay-2019032611111132.chn?","end":"2019-03-27 01:08:46","function":"getData","response_data":{"client":"[object] (Goutte\\Client: {})","crawler":"[object] (Symfony\\Component\\DomCrawler\\Crawler: {})"}}] []
+[2019-03-27 01:08:46] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:08:49] Crawler.INFO: Log [{"URL":"http://cafebiz.vn/ios-122-chinh-thuc-ra-mat-va-da-co-the-tai-ve-20190326113806976.chn?","start":"2019-03-27 01:08:49","function":"getData","request_data":[]}] []
+[2019-03-27 01:08:49] Crawler.INFO: Log [{"URL":"http://cafebiz.vn/ios-122-chinh-thuc-ra-mat-va-da-co-the-tai-ve-20190326113806976.chn?","end":"2019-03-27 01:08:49","function":"getData","response_data":{"client":"[object] (Goutte\\Client: {})","crawler":"[object] (Symfony\\Component\\DomCrawler\\Crawler: {})"}}] []
+[2019-03-27 01:08:49] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:08:50] Crawler.INFO: Log [{"URL":"https://www3.nhk.or.jp/news/easy/top-list.json?","start":"2019-03-27 01:08:50","function":"getData","request_data":[]}] []
+[2019-03-27 01:08:51] Crawler.INFO: Log [{"URL":"https://www3.nhk.or.jp/news/easy/top-list.json?","end":"2019-03-27 01:08:51","function":"getData","response_data":"﻿[{\"top_priority_number\":\"1\",\"top_display_flag\":true,\"news_id\":\"k10011860241000\",\"news_prearranged_time\":\"2019-03-26 15:55:00\",\"title\":\"\\u6771\\u4eac\\u30d1\\u30e9\\u30ea\\u30f3\\u30d4\\u30c3\\u30af\\u3000\\u8056\\u706b\\u30ea\\u30ec\\u30fc\\u306b\\u4f7f\\u3046\\u30c8\\u30fc\\u30c1\\u304c\\u3067\\u304d\\u308b\",\"title_with_ruby\":\"<ruby>\\u6771\\u4eac<rt>\\u3068\\u3046\\u304d\\u3087\\u3046<\\/rt><\\/ruby>\\u30d1\\u30e9\\u30ea\\u30f3\\u30d4\\u30c3\\u30af\\u3000<ruby>\\u8056\\u706b<rt>\\u305b\\u3044\\u304b<\\/rt><\\/ruby>\\u30ea\\u30ec\\u30fc\\u306b<ruby>\\u4f7f<rt>\\u3064\\u304b<\\/rt><\\/ruby>\\u3046\\u30c8\\u30fc\\u30c1\\u304c\\u3067\\u304d\\u308b\",\"outline_with_ruby\":\"<p>\\uff12\\uff10\\uff12\\uff10<ruby>\\u5e74<rt>\\u306d\\u3093<\\/rt><\\/ruby>\\u306b<ruby>\\u6771\\u4eac<rt>\\u3068\\u3046\\u304d\\u3087\\u3046<\\/rt><\\/ruby>\\u3067<ruby>\\u884c<rt>\\u304a\\u3053\\u306a<\\/rt><\\/ruby>\\u3046<a href='javascript:void(0)' class='dicWin' id='id-0002'>\\u30d1\\u30e9\\u30ea\\u30f3\\u30d4\\u30c3\\u30af<\\/a>\\u306e<a href='javascript:void(0)' class='dicWin' id='id-0000'><ruby>\\u8056\\u706b<rt>\\u305b\\u3044\\u304b<\\/rt><\\/ruby><\\/a><a href='javascript:void(0)' class='dicWin' id='id-0001'>\\u30ea\\u30ec\\u30fc<\\/a>\\u306b<ruby>\\u4f7f<rt>\\u3064\\u304b<\\/rt><\\/ruby>\\u3046\\u30c8\\u30fc\\u30c1\\u304c\\u3067\\u304d\\u307e\\u3057\\u305f\\u3002\",\"news_file_ver\":true,\"news_publication_status\":true,\"has_news_web_image\":true,\"has_news_web_movie\":true,\"has_news_easy_image\":false,\"has_news_easy_movie\":false,\"has_news_easy_voice\":true,\"news_web_image_uri\":\"https:\\/\\/www3.nhk.or.jp\\/news\\/html\\/20190325\\/..\\/20190325\\/K10011860241_1903251754_1903251755_01_02.jpg\",\"news_web_movie_uri\":\"k10011860241_201903251809_201903251810.mp4\",\"news_easy_image_uri\":\"''\",\"news_easy_movie_uri\":\"''\",\"news_easy_voice_uri\":\"k10011860241000.mp4\"},{\"top_priority_number\":\"2\",\"top_display_flag\":true,\"news_id\":\"k10011859911000\",\"news_prearranged_time\":\"2019-03-26 15:55:00\",\"title\":\"\\u30a4\\u30f3\\u30c9\\u30cd\\u30b7\\u30a2\\u3000\\u521d\\u3081\\u3066\\u306e\\u5730\\u4e0b\\u9244\\u306e\\u904b\\u8ee2\\u304c\\u59cb\\u307e\\u308b\",\"title_with_ruby\":\"\\u30a4\\u30f3\\u30c9\\u30cd\\u30b7\\u30a2\\u3000<ruby>\\u521d<rt>\\u306f\\u3058<\\/rt><\\/ruby>\\u3081\\u3066\\u306e<ruby>\\u5730\\u4e0b\\u9244<rt>\\u3061\\u304b\\u3066\\u3064<\\/rt><\\/ruby>\\u306e<ruby>\\u904b\\u8ee2<rt>\\u3046\\u3093\\u3066\\u3093<\\/rt><\\/ruby>\\u304c<ruby>\\u59cb<rt>\\u306f\\u3058<\\/rt><\\/ruby>\\u307e\\u308b\",\"outline_with_ruby\":\"<p>\\uff12\\uff15<ruby>\\u65e5<rt>\\u306b\\u3061<\\/rt><\\/ruby>\\u3001\\u30a4\\u30f3\\u30c9\\u30cd\\u30b7\\u30a2\\u306b<ruby>\\u521d<rt>\\u306f\\u3058<\\/rt><\\/ruby>\\u3081\\u3066\\u3067\\u304d\\u305f<ruby>\\u5730\\u4e0b\\u9244<rt>\\u3061\\u304b\\u3066\\u3064<\\/rt><\\/ruby>\\u306e<ruby>\\u904b\\u8ee2<rt>\\u3046\\u3093\\u3066\\u3093<\\/rt><\\/ruby>\\u304c<ruby>\\u59cb<rt>\\u306f\\u3058<\\/rt><\\/ruby>\\u307e\\u308a\\u307e\\u3057\\u305f\\u3002\",\"news_file_ver\":false,\"news_publication_status\":true,\"has_news_web_image\":true,\"has_news_web_movie\":false,\"has_news_easy_image\":false,\"has_news_easy_movie\":false,\"has_news_easy_voice\":true,\"news_web_image_uri\":\"https:\\/\\/www3.nhk.or.jp\\/news\\/html\\/20190325\\/..\\/20190325\\/K10011859911_1903251511_1903251516_01_02.jpg\",\"news_web_movie_uri\":\"\",\"news_easy_image_uri\":\"''\",\"news_easy_movie_uri\":\"''\",\"news_easy_voice_uri\":\"k10011859911000.mp4\"},{\"top_priority_number\":\"3\",\"top_display_flag\":true,\"news_id\":\"k10011859461000\",\"news_prearranged_time\":\"2019-03-26 11:30:00\",\"title\":\"\\u65e5\\u672c\\u306e\\u5730\\u65b9\\u306e\\u8b70\\u4f1a\\u306e\\uff11\\uff19\\uff05\\u3067\\u5973\\u6027\\u306e\\u8b70\\u54e1\\u304c\\u3044\\u306a\\u3044\",\"title_with_ruby\":\"<ruby>\\u65e5\\u672c<rt>\\u306b\\u3063\\u307d\\u3093<\\/rt><\\/ruby>\\u306e<ruby>\\u5730\\u65b9<rt>\\u3061\\u307b\\u3046<\\/rt><\\/ruby>\\u306e<ruby>\\u8b70\\u4f1a<rt>\\u304e\\u304b\\u3044<\\/rt><\\/ruby>\\u306e\\uff11\\uff19\\uff05\\u3067<ruby>\\u5973\\u6027<rt>\\u3058\\u3087\\u305b\\u3044<\\/rt><\\/ruby>\\u306e<ruby>\\u8b70\\u54e1<rt>\\u304e\\u3044\\u3093<\\/rt><\\/ruby>\\u304c\\u3044\\u306a\\u3044\",\"outline_with_ruby\":\"<p>\\uff2e\\uff28\\uff2b\\u306f<ruby>\\u4eca\\u5e74<rt>\\u3053\\u3068\\u3057<\\/rt><\\/ruby>\\uff11<ruby>\\u6708<rt>\\u304c\\u3064<\\/rt><\\/ruby>\\u304b\\u3089\\uff13<ruby>\\u6708<rt>\\u304c\\u3064<\\/rt><\\/ruby>\\u3001<a href='javascript:void(0)' class='dicWin' id='id-0003'><ruby>\\u90fd\\u9053\\u5e9c\\u770c<rt>\\u3068\\u3069\\u3046\\u3075\\u3051\\u3093<\\/rt><\\/ruby><\\/a>\\u3084<a href='javascript:void(0)' class='dicWin' id='id-0004'><ruby>\\u5e02\\u753a\\u6751<rt>\\u3057\\u3061\\u3087\\u3046\\u305d\\u3093<\\/rt><\\/ruby><\\/a>\\u306a\\u3069<a href='javascript:void(0)' class='dicWin' id='id-0000'><ruby>\\u5730\\u65b9<rt>\\u3061\\u307b\\u3046<\\/rt><\\/ruby><\\/a>\\u306e<a href='javascript:void(0)' class='dicWin' id='id-0001'><ruby>\\u8b70\\u4f1a<rt>\\u304e\\u304b\\u3044<\\/rt><\\/ruby><\\/a>\\u306b<ruby>\\u5973\\u6027<rt>\\u3058\\u3087\\u305b\\u3044<\\/rt><\\/ruby>\\u306e<a href='javascript:void(0)' class='dicWin' id='id-0002'><ruby>\\u8b70\\u54e1<rt>\\u304e\\u3044\\u3093<\\/rt><\\/ruby><\\/a>\\u304c<ruby>\\u4f55<rt>\\u306a\\u3093<\\/rt><\\/ruby><ruby>\\u4eba<rt>\\u306b\\u3093<\\/rt><\\/ruby>\\u3044\\u308b\\u304b<ruby>\\u8abf<rt>\\u3057\\u3089<\\/rt><\\/ruby>\\u3079\\u307e\\u3057\\u305f\\u3002\",\"news_file_ver\":false,\"news_publication_status\":true,\"has_news_web_image\":true,\"has_news_web_movie\":false,\"has_news_easy_image\":false,\"has_news_easy_movie\":false,\"has_news_easy_voice\":true,\"news_web_image_uri\":\"https:\\/\\/www3.nhk.or.jp\\/news\\/html\\/20190325\\/..\\/20190325\\/K10011859461_1903250109_1903250404_01_02.jpg\",\"news_web_movie_uri\":\"\",\"news_easy_image_uri\":\"''\",\"news_easy_movie_uri\":\"''\",\"news_easy_voice_uri\":\"k10011859461000.mp4\"},{\"top_priority_number\":\"4\",\"top_display_flag\":true,\"news_id\":\"k10011858001000\",\"news_prearranged_time\":\"2019-03-26 11:30:00\",\"title\":\"\\u548c\\u6b4c\\u5c71\\u770c\\u306e\\u52d5\\u7269\\u5712\\u3067\\u53bb\\u5e74\\u751f\\u307e\\u308c\\u305f\\u30d1\\u30f3\\u30c0\\u304c\\u521d\\u3081\\u3066\\u5916\\u3067\\u904a\\u3076\",\"title_with_ruby\":\"<ruby>\\u548c\\u6b4c\\u5c71\\u770c<rt>\\u308f\\u304b\\u3084\\u307e\\u3051\\u3093<\\/rt><\\/ruby>\\u306e<ruby>\\u52d5\\u7269\\u5712<rt>\\u3069\\u3046\\u3076\\u3064\\u3048\\u3093<\\/rt><\\/ruby>\\u3067<ruby>\\u53bb\\u5e74<rt>\\u304d\\u3087\\u306d\\u3093<\\/rt><\\/ruby><ruby>\\u751f<rt>\\u3046<\\/rt><\\/ruby>\\u307e\\u308c\\u305f\\u30d1\\u30f3\\u30c0\\u304c<ruby>\\u521d<rt>\\u306f\\u3058<\\/rt><\\/ruby>\\u3081\\u3066<ruby>\\u5916<rt>\\u305d\\u3068<\\/rt><\\/ruby>\\u3067<ruby>\\u904a<rt>\\u3042\\u305d<\\/rt><\\/ruby>\\u3076\",\"outline_with_ruby\":\"<p><ruby>\\u548c\\u6b4c\\u5c71\\u770c<rt>\\u308f\\u304b\\u3084\\u307e\\u3051\\u3093<\\/rt><\\/ruby><ruby>\\u767d\\u6d5c\\u753a<rt>\\u3057\\u3089\\u306f\\u307e\\u3061\\u3087\\u3046<\\/rt><\\/ruby>\\u306b\\u3042\\u308b<ruby>\\u52d5\\u7269\\u5712<rt>\\u3069\\u3046\\u3076\\u3064\\u3048\\u3093<\\/rt><\\/ruby>\\u300c\\u30a2\\u30c9\\u30d9\\u30f3\\u30c1\\u30e3\\u30fc\\u30ef\\u30fc\\u30eb\\u30c9\\u300d\\u306b\\u306f\\u3001<ruby>\\u53bb\\u5e74<rt>\\u304d\\u3087\\u306d\\u3093<\\/rt><\\/ruby>\\uff18<ruby>\\u6708<rt>\\u304c\\u3064<\\/rt><\\/ruby>\\u306b<ruby>\\u751f<rt>\\u3046<\\/rt><\\/ruby>\\u307e\\u308c\\u305f<a href='javascript:void(0)' class='dicWin' id='id-0001'><ruby>\\u96cc<rt>\\u3081\\u3059<\\/rt><\\/ruby><\\/a>\\u306e<a href='javascript:void(0)' class='dicWin' id='id-0000'>\\u30d1\\u30f3\\u30c0<\\/a>\\u306e\\u300c<ruby>\\u5f69\\u6d5c<rt>\\u3055\\u3044\\u3072\\u3093<\\/rt><\\/ruby>\\u300d\\u304c\\u3044\\u307e\\u3059\\u3002\",\"news_file_ver\":false,\"news_publication_status\":true,\"has_news_web_image\":true,\"has_news_web_movie\":true,\"has_news_easy_image\":false,\"has_news_easy_movie\":false,\"has_news_easy_voice\":true,\"news_web_image_uri\":\"https:\\/\\/www3.nhk.or.jp\\/news\\/html\\/20190323\\/..\\/20190323\\/K10011858001_1903231151_1903231219_01_03.jpg\",\"news_web_movie_uri\":\"k10011858001_201903231216_201903231216.mp4\",\"news_easy_image_uri\":\"''\",\"news_easy_movie_uri\":\"''\",\"news_easy_voice_uri\":\"k10011858001000.mp4\"},{\"top_priority_number\":\"5\",\"top_display_flag\":true,\"news_id\":\"k10011859231000\",\"news_prearranged_time\":\"2019-03-25 16:45:00\",\"title\":\"\\u6771\\u65e5\\u672c\\u5927\\u9707\\u707d\\u3067\\u88ab\\u5bb3\\u304c\\u3042\\u3063\\u305f\\u5ca9\\u624b\\u770c\\u306b\\u65b0\\u3057\\u3044\\u9244\\u9053\\u304c\\u3067\\u304d\\u308b\",\"title_with_ruby\":\"<ruby>\\u6771\\u65e5\\u672c\\u5927\\u9707\\u707d<rt>\\u3072\\u304c\\u3057\\u306b\\u307b\\u3093\\u3060\\u3044\\u3057\\u3093\\u3055\\u3044<\\/rt><\\/ruby>\\u3067<ruby>\\u88ab\\u5bb3<rt>\\u3072\\u304c\\u3044<\\/rt><\\/ruby>\\u304c\\u3042\\u3063\\u305f<ruby>\\u5ca9\\u624b\\u770c<rt>\\u3044\\u308f\\u3066\\u3051\\u3093<\\/rt><\\/ruby>\\u306b<ruby>\\u65b0<rt>\\u3042\\u305f\\u3089<\\/rt><\\/ruby>\\u3057\\u3044<ruby>\\u9244\\u9053<rt>\\u3066\\u3064\\u3069\\u3046<\\/rt><\\/ruby>\\u304c\\u3067\\u304d\\u308b\",\"outline_with_ruby\":\"<p><ruby>\\u5ca9\\u624b\\u770c<rt>\\u3044\\u308f\\u3066\\u3051\\u3093<\\/rt><\\/ruby>\\u306e<ruby>\\u6d77<rt>\\u3046\\u307f<\\/rt><\\/ruby>\\u306e<ruby>\\u8fd1<rt>\\u3061\\u304b<\\/rt><\\/ruby>\\u304f\\u306e<ruby>\\u4e45\\u6148\\u99c5<rt>\\u304f\\u3058\\u3048\\u304d<\\/rt><\\/ruby>\\u3068<ruby>\\u76db\\u99c5<rt>\\u3055\\u304b\\u308a\\u3048\\u304d<\\/rt><\\/ruby>\\u306e<ruby>\\u9593<rt>\\u3042\\u3044\\u3060<\\/rt><\\/ruby>\\u3092<ruby>\\u8d70<rt>\\u306f\\u3057<\\/rt><\\/ruby>\\u308b<a href='javascript:void(0)' class='dicWin' id='id-0001'><ruby>\\u9244\\u9053<rt>\\u3066\\u3064\\u3069\\u3046<\\/rt><\\/ruby><\\/a>\\u306f\\u3001\\uff18<ruby>\\u5e74<rt>\\u306d\\u3093<\\/rt><\\/ruby><ruby>\\u524d<rt>\\u307e\\u3048<\\/rt><\\/ruby>\\u306e<ruby>\\u6771\\u65e5\\u672c\\u5927\\u9707\\u707d<rt>\\u3072\\u304c\\u3057\\u306b\\u307b\\u3093\\u3060\\u3044\\u3057\\u3093\\u3055\\u3044<\\/rt><\\/ruby>\\u3067<a href='javascript:void(0)' class='dicWin' id='id-0002'><ruby>\\u7dda\\u8def<rt>\\u305b\\u3093\\u308d<\\/rt><\\/ruby><\\/a>\\u3084<ruby>\\u6a4b<rt>\\u306f\\u3057<\\/rt><\\/ruby>\\u306a\\u3069\\u304c<ruby>\\u58ca<rt>\\u3053\\u308f<\\/rt><\\/ruby>\\u308c\\u308b<a href='javascript:void(0)' class='dicWin' id='id-0000'><ruby>\\u88ab\\u5bb3<rt>\\u3072\\u304c\\u3044<\\/rt><\\/ruby><\\/a>\\u304c\\u3042\\u3063\\u3066\\u3001<ruby>\\u904b\\u8ee2<rt>\\u3046\\u3093\\u3066\\u3093<\\/rt><\\/ruby>\\u304c\\u3067\\u304d\\u306a\\u304f\\u306a\\u308a\\u307e\\u3057\\u305f\\u3002\",\"news_file_ver\":true,\"news_publication_status\":true,\"has_news_web_image\":true,\"has_news_web_movie\":true,\"has_news_easy_image\":false,\"has_news_easy_movie\":false,\"has_news_easy_voice\":true,\"news_web_image_uri\":\"https:\\/\\/www3.nhk.or.jp\\/news\\/html\\/20190324\\/..\\/20190324\\/K10011859231_1903242118_1903242120_01_03.jpg\",\"news_web_movie_uri\":\"k10011859231_201903242118_201903242120.mp4\",\"news_easy_image_uri\":\"''\",\"news_easy_movie_uri\":\"''\",\"news_easy_voice_uri\":\"k10011859231000.mp4\"},{\"top_priority_number\":\"6\",\"top_display_flag\":true,\"news_id\":\"k10011858731000\",\"news_prearranged_time\":\"2019-03-25 16:45:00\",\"title\":\"\\u4e57\\u308b\\u524d\\u306b\\u6599\\u91d1\\u3092\\u6c7a\\u3081\\u308b\\u30bf\\u30af\\u30b7\\u30fc\\u3000\\u65e9\\u3044\\u5834\\u5408\\u4eca\\u5e74\\u59cb\\u307e\\u308b\\u4e88\\u5b9a\",\"title_with_ruby\":\"<ruby>\\u4e57<rt>\\u306e<\\/rt><\\/ruby>\\u308b<ruby>\\u524d<rt>\\u307e\\u3048<\\/rt><\\/ruby>\\u306b<ruby>\\u6599\\u91d1<rt>\\u308a\\u3087\\u3046\\u304d\\u3093<\\/rt><\\/ruby>\\u3092<ruby>\\u6c7a<rt>\\u304d<\\/rt><\\/ruby>\\u3081\\u308b\\u30bf\\u30af\\u30b7\\u30fc\\u3000<ruby>\\u65e9<rt>\\u306f\\u3084<\\/rt><\\/ruby>\\u3044<ruby>\\u5834\\u5408<rt>\\u3070\\u3042\\u3044<\\/rt><\\/ruby><ruby>\\u4eca\\u5e74<rt>\\u3053\\u3068\\u3057<\\/rt><\\/ruby><ruby>\\u59cb<rt>\\u306f\\u3058<\\/rt><\\/ruby>\\u307e\\u308b<ruby>\\u4e88\\u5b9a<rt>\\u3088\\u3066\\u3044<\\/rt><\\/ruby>\",\"outline_with_ruby\":\"<p><ruby>\\u65e5\\u672c<rt>\\u306b\\u3063\\u307d\\u3093<\\/rt><\\/ruby>\\u306e<a href='javascript:void(0)' class='dicWin' id='id-0001'><ruby>\\u6c7a<rt>\\u304d<\\/rt><\\/ruby>\\u307e\\u308a<\\/a>\\u3067\\u306f\\u3001\\u30bf\\u30af\\u30b7\\u30fc\\u306e<a href='javascript:void(0)' class='dicWin' id='id-0000'><ruby>\\u6599\\u91d1<rt>\\u308a\\u3087\\u3046\\u304d\\u3093<\\/rt><\\/ruby><\\/a>\\u3092<ruby>\\u4e57<rt>\\u306e<\\/rt><\\/ruby>\\u308b<ruby>\\u524d<rt>\\u307e\\u3048<\\/rt><\\/ruby>\\u306b<ruby>\\u6c7a<rt>\\u304d<\\/rt><\\/ruby>\\u3081\\u308b\\u3053\\u3068\\u304c\\u3067\\u304d\\u307e\\u305b\\u3093\\u3002\",\"news_file_ver\":true,\"news_publication_status\":true,\"has_news_web_image\":true,\"has_news_web_movie\":false,\"has_news_easy_image\":false,\"has_news_easy_movie\":false,\"has_news_easy_voice\":true,\"news_web_image_uri\":\"https:\\/\\/www3.nhk.or.jp\\/news\\/html\\/20190324\\/..\\/20190324\\/K10011858731_1903241054_1903241101_01_02.jpg\",\"news_web_movie_uri\":\"\",\"news_easy_image_uri\":\"''\",\"news_easy_movie_uri\":\"''\",\"news_easy_voice_uri\":\"k10011858731000.mp4\"},{\"top_priority_number\":\"7\",\"top_display_flag\":true,\"news_id\":\"k10011858101000\",\"news_prearranged_time\":\"2019-03-25 16:45:00\",\"title\":\"\\u65e5\\u672c\\u3067\\u50cd\\u304f\\u5916\\u56fd\\u4eba\\u306e\\u751f\\u6d3b\\u306e\\u305f\\u3081\\u306e\\u30b5\\u30fc\\u30d3\\u30b9\\u304c\\u5897\\u3048\\u3066\\u3044\\u308b\",\"title_with_ruby\":\"<ruby>\\u65e5\\u672c<rt>\\u306b\\u3063\\u307d\\u3093<\\/rt><\\/ruby>\\u3067<ruby>\\u50cd<rt>\\u306f\\u305f\\u3089<\\/rt><\\/ruby>\\u304f<ruby>\\u5916\\u56fd\\u4eba<rt>\\u304c\\u3044\\u3053\\u304f\\u3058\\u3093<\\/rt><\\/ruby>\\u306e<ruby>\\u751f\\u6d3b<rt>\\u305b\\u3044\\u304b\\u3064<\\/rt><\\/ruby>\\u306e\\u305f\\u3081\\u306e\\u30b5\\u30fc\\u30d3\\u30b9\\u304c<ruby>\\u5897<rt>\\u3075<\\/rt><\\/ruby>\\u3048\\u3066\\u3044\\u308b\",\"outline_with_ruby\":\"<p><ruby>\\u6765\\u6708<rt>\\u3089\\u3044\\u3052\\u3064<\\/rt><\\/ruby>\\u304b\\u3089<ruby>\\u6cd5\\u5f8b<rt>\\u307b\\u3046\\u308a\\u3064<\\/rt><\\/ruby>\\u304c<ruby>\\u5909<rt>\\u304b<\\/rt><\\/ruby>\\u308f\\u3063\\u3066\\u3001<ruby>\\u4eca<rt>\\u3044\\u307e<\\/rt><\\/ruby>\\u3088\\u308a\\u305f\\u304f\\u3055\\u3093\\u306e<ruby>\\u5916\\u56fd\\u4eba<rt>\\u304c\\u3044\\u3053\\u304f\\u3058\\u3093<\\/rt><\\/ruby>\\u304c<ruby>\\u65e5\\u672c<rt>\\u306b\\u3063\\u307d\\u3093<\\/rt><\\/ruby>\\u3067<ruby>\\u50cd<rt>\\u306f\\u305f\\u3089<\\/rt><\\/ruby>\\u304f\\u3053\\u3068\\u304c\\u3067\\u304d\\u308b\\u3088\\u3046\\u306b\\u306a\\u308a\\u307e\\u3059\\u3002\",\"news_file_ver\":true,\"news_publication_status\":true,\"has_news_web_image\":true,\"has_news_web_movie\":false,\"has_news_easy_image\":false,\"has_news_easy_movie\":false,\"has_news_easy_voice\":true,\"news_web_image_uri\":\"https:\\/\\/www3.nhk.or.jp\\/news\\/html\\/20190323\\/..\\/20190323\\/K10011858101_1903231409_1903231446_01_02.jpg\",\"news_web_movie_uri\":\"\",\"news_easy_image_uri\":\"''\",\"news_easy_movie_uri\":\"''\",\"news_easy_voice_uri\":\"k10011858101000.mp4\"}]"}] []
+[2019-03-27 01:08:52] Crawler.INFO: Log [{"URL":"http://cafebiz.vn/truoc-gio-tang-le-phi-truoc-ba-day-la-mau-xe-ban-tai-giam-gia-khung-re-nhat-viet-nam-20190326105257757.chn?","start":"2019-03-27 01:08:52","function":"getData","request_data":[]}] []
+[2019-03-27 01:08:52] Crawler.INFO: Log [{"URL":"http://cafebiz.vn/truoc-gio-tang-le-phi-truoc-ba-day-la-mau-xe-ban-tai-giam-gia-khung-re-nhat-viet-nam-20190326105257757.chn?","end":"2019-03-27 01:08:52","function":"getData","response_data":{"client":"[object] (Goutte\\Client: {})","crawler":"[object] (Symfony\\Component\\DomCrawler\\Crawler: {})"}}] []
+[2019-03-27 01:08:52] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:08:53] Crawler.INFO: Log [{"URL":"http://cafebiz.vn/co-gai-24-tuoi-chuyen-kham-pha-lo-hong-cua-facebook-twitter-20190326085428335.chn?","start":"2019-03-27 01:08:53","function":"getData","request_data":[]}] []
+[2019-03-27 01:08:53] Crawler.INFO: Log [{"URL":"http://cafebiz.vn/co-gai-24-tuoi-chuyen-kham-pha-lo-hong-cua-facebook-twitter-20190326085428335.chn?","end":"2019-03-27 01:08:53","function":"getData","response_data":{"client":"[object] (Goutte\\Client: {})","crawler":"[object] (Symfony\\Component\\DomCrawler\\Crawler: {})"}}] []
+[2019-03-27 01:08:54] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:08:54] Crawler.INFO: Log [{"URL":"http://cafebiz.vn/5-phut-de-xem-lai-toan-bo-su-kien-cua-apple-dem-qua-ra-mat-news-the-tin-dung-nen-tang-game-arcade-va-dich-vu-tv-20190326084511789.chn?","start":"2019-03-27 01:08:54","function":"getData","request_data":[]}] []
+[2019-03-27 01:08:54] Crawler.INFO: Log [{"URL":"http://cafebiz.vn/5-phut-de-xem-lai-toan-bo-su-kien-cua-apple-dem-qua-ra-mat-news-the-tin-dung-nen-tang-game-arcade-va-dich-vu-tv-20190326084511789.chn?","end":"2019-03-27 01:08:54","function":"getData","response_data":{"client":"[object] (Goutte\\Client: {})","crawler":"[object] (Symfony\\Component\\DomCrawler\\Crawler: {})"}}] []
+[2019-03-27 01:08:54] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:09:12] Crawler.INFO: Log [{"URL":"http://cafebiz.vn/apple-ra-mat-the-tin-dung-cua-rieng-minh-khong-co-day-so-tai-khoan-khong-co-ma-cvv-20190326084137492.chn?","start":"2019-03-27 01:09:12","function":"getData","request_data":[]}] []
+[2019-03-27 01:09:12] Crawler.INFO: Log [{"URL":"http://cafebiz.vn/apple-ra-mat-the-tin-dung-cua-rieng-minh-khong-co-day-so-tai-khoan-khong-co-ma-cvv-20190326084137492.chn?","end":"2019-03-27 01:09:12","function":"getData","response_data":{"client":"[object] (Goutte\\Client: {})","crawler":"[object] (Symfony\\Component\\DomCrawler\\Crawler: {})"}}] []
+[2019-03-27 01:09:12] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:09:14] Crawler.INFO: Log [{"URL":"http://cafebiz.vn/grabpay-by-moca-vs-momo-cuoc-chien-bong-rat-cua-hai-dai-gia-mang-payment-tren-tung-tran-dia-tra-sua-banh-my-che-oc-via-he-20190325165217757.chn?","start":"2019-03-27 01:09:14","function":"getData","request_data":[]}] []
+[2019-03-27 01:09:14] Crawler.INFO: Log [{"URL":"http://cafebiz.vn/grabpay-by-moca-vs-momo-cuoc-chien-bong-rat-cua-hai-dai-gia-mang-payment-tren-tung-tran-dia-tra-sua-banh-my-che-oc-via-he-20190325165217757.chn?","end":"2019-03-27 01:09:14","function":"getData","response_data":{"client":"[object] (Goutte\\Client: {})","crawler":"[object] (Symfony\\Component\\DomCrawler\\Crawler: {})"}}] []
+[2019-03-27 01:09:14] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:09:23] Crawler.INFO: Log [{"URL":"https://finance.yahoo.com/news/u-trade-judge-recommends-import-181019217.html?","start":"2019-03-27 01:09:23","function":"getData","request_data":[]}] []
+[2019-03-27 01:09:25] Crawler.INFO: Log [{"URL":"https://finance.yahoo.com/news/u-trade-judge-recommends-import-181019217.html?","end":"2019-03-27 01:09:25","function":"getData","response_data":{"client":"[object] (Goutte\\Client: {})","crawler":"[object] (Symfony\\Component\\DomCrawler\\Crawler: {})"}}] []
+[2019-03-27 01:09:26] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:09:26] Crawler.INFO: Log [{"URL":"https://finance.yahoo.com/news/apple-tv-plus-price-130146765.html?","start":"2019-03-27 01:09:26","function":"getData","request_data":[]}] []
+[2019-03-27 01:09:29] Crawler.INFO: Log [{"URL":"https://finance.yahoo.com/news/apple-tv-plus-price-130146765.html?","end":"2019-03-27 01:09:29","function":"getData","response_data":{"client":"[object] (Goutte\\Client: {})","crawler":"[object] (Symfony\\Component\\DomCrawler\\Crawler: {})"}}] []
+[2019-03-27 01:09:29] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:09:33] Crawler.INFO: Log [{"URL":"https://finance.yahoo.com/news/apple-tv-plus-oprah-steven-spielberg-190539383.html?","start":"2019-03-27 01:09:33","function":"getData","request_data":[]}] []
+[2019-03-27 01:09:36] Crawler.INFO: Log [{"URL":"https://finance.yahoo.com/news/apple-tv-plus-oprah-steven-spielberg-190539383.html?","end":"2019-03-27 01:09:36","function":"getData","response_data":{"client":"[object] (Goutte\\Client: {})","crawler":"[object] (Symfony\\Component\\DomCrawler\\Crawler: {})"}}] []
+[2019-03-27 01:09:36] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:09:36] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:09:36] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:09:40] Crawler.INFO: Log [{"URL":"https://finance.yahoo.com/news/facebook-password-security-195429527.html?","start":"2019-03-27 01:09:40","function":"getData","request_data":[]}] []
+[2019-03-27 01:09:44] Crawler.INFO: Log [{"URL":"https://finance.yahoo.com/news/facebook-password-security-195429527.html?","end":"2019-03-27 01:09:44","function":"getData","response_data":{"client":"[object] (Goutte\\Client: {})","crawler":"[object] (Symfony\\Component\\DomCrawler\\Crawler: {})"}}] []
+[2019-03-27 01:09:44] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:09:44] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:09:44] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:09:45] Crawler.INFO: Log [{"URL":"https://finance.yahoo.com/news/apple-ipad-mini-review-110000702.html?","start":"2019-03-27 01:09:45","function":"getData","request_data":[]}] []
+[2019-03-27 01:09:56] Crawler.INFO: Log [{"URL":"https://finance.yahoo.com/news/apple-ipad-mini-review-110000702.html?","end":"2019-03-27 01:09:56","function":"getData","response_data":{"client":"[object] (Goutte\\Client: {})","crawler":"[object] (Symfony\\Component\\DomCrawler\\Crawler: {})"}}] []
+[2019-03-27 01:09:57] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:09:57] Crawler.INFO: Log [{"URL":"https://finance.yahoo.com/news/google-stadia-game-streaming-service-174436356.html?","start":"2019-03-27 01:09:57","function":"getData","request_data":[]}] []
+[2019-03-27 01:10:01] Crawler.INFO: Log [{"URL":"https://finance.yahoo.com/news/google-stadia-game-streaming-service-174436356.html?","end":"2019-03-27 01:10:01","function":"getData","response_data":{"client":"[object] (Goutte\\Client: {})","crawler":"[object] (Symfony\\Component\\DomCrawler\\Crawler: {})"}}] []
+[2019-03-27 01:10:01] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:10:01] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:10:01] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:10:02] Crawler.INFO: Log [{"URL":"https://finance.yahoo.com/news/apple-imac-upgrade-123000172.html?","start":"2019-03-27 01:10:02","function":"getData","request_data":[]}] []
+[2019-03-27 01:10:05] Crawler.INFO: Log [{"URL":"https://finance.yahoo.com/news/apple-imac-upgrade-123000172.html?","end":"2019-03-27 01:10:05","function":"getData","response_data":{"client":"[object] (Goutte\\Client: {})","crawler":"[object] (Symfony\\Component\\DomCrawler\\Crawler: {})"}}] []
+[2019-03-27 01:10:05] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:10:05] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:10:05] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:10:08] Crawler.INFO: Log [{"URL":"https://finance.yahoo.com/news/facebook-google-new-zealand-shooting-213458304.html?","start":"2019-03-27 01:10:08","function":"getData","request_data":[]}] []
+[2019-03-27 01:10:11] Crawler.INFO: Log [{"URL":"https://finance.yahoo.com/news/facebook-google-new-zealand-shooting-213458304.html?","end":"2019-03-27 01:10:11","function":"getData","response_data":{"client":"[object] (Goutte\\Client: {})","crawler":"[object] (Symfony\\Component\\DomCrawler\\Crawler: {})"}}] []
+[2019-03-27 01:10:11] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:10:12] Crawler.INFO: Log [{"URL":"https://finance.yahoo.com/news/spotify-apple-app-store-164634805.html?","start":"2019-03-27 01:10:12","function":"getData","request_data":[]}] []
+[2019-03-27 01:10:14] Crawler.INFO: Log [{"URL":"https://finance.yahoo.com/news/spotify-apple-app-store-164634805.html?","end":"2019-03-27 01:10:14","function":"getData","response_data":{"client":"[object] (Goutte\\Client: {})","crawler":"[object] (Symfony\\Component\\DomCrawler\\Crawler: {})"}}] []
+[2019-03-27 01:10:15] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:10:15] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:10:15] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:10:15] Crawler.INFO: Log [{"URL":"https://finance.yahoo.com/news/fitbit-versa-lite-review-193641289.html?","start":"2019-03-27 01:10:15","function":"getData","request_data":[]}] []
+[2019-03-27 01:10:18] Crawler.INFO: Log [{"URL":"https://finance.yahoo.com/news/fitbit-versa-lite-review-193641289.html?","end":"2019-03-27 01:10:18","function":"getData","response_data":{"client":"[object] (Goutte\\Client: {})","crawler":"[object] (Symfony\\Component\\DomCrawler\\Crawler: {})"}}] []
+[2019-03-27 01:10:18] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:10:18] Crawler.INFO: Log [{"URL":"https://finance.yahoo.com/news/sxsw-weird-gadgets-135216946.html?","start":"2019-03-27 01:10:18","function":"getData","request_data":[]}] []
+[2019-03-27 01:10:21] Crawler.INFO: Log [{"URL":"https://finance.yahoo.com/news/sxsw-weird-gadgets-135216946.html?","end":"2019-03-27 01:10:21","function":"getData","response_data":{"client":"[object] (Goutte\\Client: {})","crawler":"[object] (Symfony\\Component\\DomCrawler\\Crawler: {})"}}] []
+[2019-03-27 01:10:21] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:10:21] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:10:21] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:10:23] Crawler.INFO: Log [{"URL":"https://finance.yahoo.com/news/facebook-amazon-google-smartphone-spying-170721118.html?","start":"2019-03-27 01:10:23","function":"getData","request_data":[]}] []
+[2019-03-27 01:10:26] Crawler.INFO: Log [{"URL":"https://finance.yahoo.com/news/facebook-amazon-google-smartphone-spying-170721118.html?","end":"2019-03-27 01:10:26","function":"getData","response_data":{"client":"[object] (Goutte\\Client: {})","crawler":"[object] (Symfony\\Component\\DomCrawler\\Crawler: {})"}}] []
+[2019-03-27 01:10:26] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:10:27] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:10:27] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:10:29] Crawler.INFO: Log [{"URL":"https://finance.yahoo.com/news/audi-traffic-light-system-143313582.html?","start":"2019-03-27 01:10:29","function":"getData","request_data":[]}] []
+[2019-03-27 01:10:32] Crawler.INFO: Log [{"URL":"https://finance.yahoo.com/news/audi-traffic-light-system-143313582.html?","end":"2019-03-27 01:10:32","function":"getData","response_data":{"client":"[object] (Goutte\\Client: {})","crawler":"[object] (Symfony\\Component\\DomCrawler\\Crawler: {})"}}] []
+[2019-03-27 01:10:32] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:10:32] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:10:32] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:10:33] Crawler.INFO: Log [{"URL":"https://finance.yahoo.com/news/fitbit-versa-lite-and-inspire-151757931.html?","start":"2019-03-27 01:10:33","function":"getData","request_data":[]}] []
+[2019-03-27 01:10:36] Crawler.INFO: Log [{"URL":"https://finance.yahoo.com/news/fitbit-versa-lite-and-inspire-151757931.html?","end":"2019-03-27 01:10:36","function":"getData","response_data":{"client":"[object] (Goutte\\Client: {})","crawler":"[object] (Symfony\\Component\\DomCrawler\\Crawler: {})"}}] []
+[2019-03-27 01:10:36] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:10:37] Crawler.INFO: Log [{"URL":"https://finance.yahoo.com/news/apple-siri-shortcuts-google-amazon-212004143.html?","start":"2019-03-27 01:10:37","function":"getData","request_data":[]}] []
+[2019-03-27 01:10:40] Crawler.INFO: Log [{"URL":"https://finance.yahoo.com/news/apple-siri-shortcuts-google-amazon-212004143.html?","end":"2019-03-27 01:10:40","function":"getData","response_data":{"client":"[object] (Goutte\\Client: {})","crawler":"[object] (Symfony\\Component\\DomCrawler\\Crawler: {})"}}] []
+[2019-03-27 01:10:40] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:10:40] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:10:40] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:10:40] Crawler.INFO: Log [{"URL":"https://finance.yahoo.com/news/weirdest-gadets-mwc-2019-171004097.html?","start":"2019-03-27 01:10:40","function":"getData","request_data":[]}] []
+[2019-03-27 01:10:44] Crawler.INFO: Log [{"URL":"https://finance.yahoo.com/news/weirdest-gadets-mwc-2019-171004097.html?","end":"2019-03-27 01:10:44","function":"getData","response_data":{"client":"[object] (Goutte\\Client: {})","crawler":"[object] (Symfony\\Component\\DomCrawler\\Crawler: {})"}}] []
+[2019-03-27 01:10:44] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:10:44] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:10:44] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:10:44] Crawler.INFO: Log [{"URL":"https://finance.yahoo.com/news/galaxy-s10-review-125242371.html?","start":"2019-03-27 01:10:44","function":"getData","request_data":[]}] []
+[2019-03-27 01:10:47] Crawler.INFO: Log [{"URL":"https://finance.yahoo.com/news/galaxy-s10-review-125242371.html?","end":"2019-03-27 01:10:47","function":"getData","response_data":{"client":"[object] (Goutte\\Client: {})","crawler":"[object] (Symfony\\Component\\DomCrawler\\Crawler: {})"}}] []
+[2019-03-27 01:10:47] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:10:47] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:10:47] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:10:49] Crawler.INFO: Log [{"URL":"https://finance.yahoo.com/news/best-cheap-phones-222441818.html?","start":"2019-03-27 01:10:49","function":"getData","request_data":[]}] []
+[2019-03-27 01:10:52] Crawler.INFO: Log [{"URL":"https://finance.yahoo.com/news/best-cheap-phones-222441818.html?","end":"2019-03-27 01:10:52","function":"getData","response_data":{"client":"[object] (Goutte\\Client: {})","crawler":"[object] (Symfony\\Component\\DomCrawler\\Crawler: {})"}}] []
+[2019-03-27 01:10:52] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:10:53] Crawler.INFO: Log [{"URL":"https://finance.yahoo.com/news/you-dont-need-5g-phone-163545363.html?","start":"2019-03-27 01:10:53","function":"getData","request_data":[]}] []
+[2019-03-27 01:11:00] Crawler.INFO: Log [{"URL":"https://finance.yahoo.com/news/you-dont-need-5g-phone-163545363.html?","end":"2019-03-27 01:11:00","function":"getData","response_data":{"client":"[object] (Goutte\\Client: {})","crawler":"[object] (Symfony\\Component\\DomCrawler\\Crawler: {})"}}] []
+[2019-03-27 01:11:01] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:11:01] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:11:01] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:11:01] Crawler.INFO: Log [{"URL":"https://finance.yahoo.com/news/microsoft-hololens-2-augmented-reality-jobs-175027873.html?","start":"2019-03-27 01:11:01","function":"getData","request_data":[]}] []
+[2019-03-27 01:11:05] Crawler.INFO: Log [{"URL":"https://finance.yahoo.com/news/microsoft-hololens-2-augmented-reality-jobs-175027873.html?","end":"2019-03-27 01:11:05","function":"getData","response_data":{"client":"[object] (Goutte\\Client: {})","crawler":"[object] (Symfony\\Component\\DomCrawler\\Crawler: {})"}}] []
+[2019-03-27 01:11:06] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:11:06] Crawler.INFO: Log [{"URL":"https://finance.yahoo.com/news/netflix-international-price-increase-202511060.html?","start":"2019-03-27 01:11:06","function":"getData","request_data":[]}] []
+[2019-03-27 01:11:08] Crawler.INFO: Log [{"URL":"https://finance.yahoo.com/news/netflix-international-price-increase-202511060.html?","end":"2019-03-27 01:11:08","function":"getData","response_data":{"client":"[object] (Goutte\\Client: {})","crawler":"[object] (Symfony\\Component\\DomCrawler\\Crawler: {})"}}] []
+[2019-03-27 01:11:09] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:11:09] Crawler.INFO: Log [{"URL":"https://finance.yahoo.com/news/pay-streaming-services-versus-cable-215957302.html?","start":"2019-03-27 01:11:09","function":"getData","request_data":[]}] []
+[2019-03-27 01:11:12] Crawler.INFO: Log [{"URL":"https://finance.yahoo.com/news/pay-streaming-services-versus-cable-215957302.html?","end":"2019-03-27 01:11:12","function":"getData","response_data":{"client":"[object] (Goutte\\Client: {})","crawler":"[object] (Symfony\\Component\\DomCrawler\\Crawler: {})"}}] []
+[2019-03-27 01:11:12] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:11:12] Crawler.INFO: Log [{"URL":"https://finance.yahoo.com/news/facebook-google-200659813.html?","start":"2019-03-27 01:11:12","function":"getData","request_data":[]}] []
+[2019-03-27 01:11:15] Crawler.INFO: Log [{"URL":"https://finance.yahoo.com/news/facebook-google-200659813.html?","end":"2019-03-27 01:11:15","function":"getData","response_data":{"client":"[object] (Goutte\\Client: {})","crawler":"[object] (Symfony\\Component\\DomCrawler\\Crawler: {})"}}] []
+[2019-03-27 01:11:15] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:11:16] Crawler.INFO: Log [{"URL":"https://finance.yahoo.com/news/samsungs-galaxy-fold-foldable-smartphone-165921867.html?","start":"2019-03-27 01:11:16","function":"getData","request_data":[]}] []
+[2019-03-27 01:11:20] Crawler.INFO: Log [{"URL":"https://finance.yahoo.com/news/samsungs-galaxy-fold-foldable-smartphone-165921867.html?","end":"2019-03-27 01:11:20","function":"getData","response_data":{"client":"[object] (Goutte\\Client: {})","crawler":"[object] (Symfony\\Component\\DomCrawler\\Crawler: {})"}}] []
+[2019-03-27 01:11:20] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:11:20] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:11:20] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:11:23] Crawler.INFO: Log [{"URL":"https://finance.yahoo.com/news/samsung-galaxy-s10-5g-193009393.html?","start":"2019-03-27 01:11:23","function":"getData","request_data":[]}] []
+[2019-03-27 01:11:26] Crawler.INFO: Log [{"URL":"https://finance.yahoo.com/news/samsung-galaxy-s10-5g-193009393.html?","end":"2019-03-27 01:11:26","function":"getData","response_data":{"client":"[object] (Goutte\\Client: {})","crawler":"[object] (Symfony\\Component\\DomCrawler\\Crawler: {})"}}] []
+[2019-03-27 01:11:26] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:11:33] Crawler.INFO: Log [{"URL":"https://www.gadgetsnow.com/tech-news/step-industries-bags-rs-132-crore-electrification-project-under-jharkhand-sampurna-bijli-achchhadan-yojna/articleshow/68583567.cms?","start":"2019-03-27 01:11:33","function":"getData","request_data":[]}] []
+[2019-03-27 01:11:34] Crawler.INFO: Log [{"URL":"https://www.gadgetsnow.com/tech-news/step-industries-bags-rs-132-crore-electrification-project-under-jharkhand-sampurna-bijli-achchhadan-yojna/articleshow/68583567.cms?","end":"2019-03-27 01:11:34","function":"getData","response_data":{"client":"[object] (Goutte\\Client: {})","crawler":"[object] (Symfony\\Component\\DomCrawler\\Crawler: {})"}}] []
+[2019-03-27 01:11:34] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:11:35] Crawler.INFO: Log [{"URL":"https://www.gadgetsnow.com/tech-news/huawei-p30-p30-pro-launch-live-updates-expected-price-specifications-and-more/articleshow/68582166.cms?","start":"2019-03-27 01:11:35","function":"getData","request_data":[]}] []
+[2019-03-27 01:11:35] Crawler.INFO: Log [{"URL":"https://www.gadgetsnow.com/tech-news/huawei-p30-p30-pro-launch-live-updates-expected-price-specifications-and-more/articleshow/68582166.cms?","end":"2019-03-27 01:11:35","function":"getData","response_data":{"client":"[object] (Goutte\\Client: {})","crawler":"[object] (Symfony\\Component\\DomCrawler\\Crawler: {})"}}] []
+[2019-03-27 01:11:35] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:11:38] Crawler.INFO: Log [{"URL":"https://www.gadgetsnow.com/tech-news/pentagon-eyeing-5g-solutions-with-huawei-rivals-ericsson-and-nokia/articleshow/68581579.cms?","start":"2019-03-27 01:11:38","function":"getData","request_data":[]}] []
+[2019-03-27 01:11:38] Crawler.INFO: Log [{"URL":"https://www.gadgetsnow.com/tech-news/pentagon-eyeing-5g-solutions-with-huawei-rivals-ericsson-and-nokia/articleshow/68581579.cms?","end":"2019-03-27 01:11:38","function":"getData","response_data":{"client":"[object] (Goutte\\Client: {})","crawler":"[object] (Symfony\\Component\\DomCrawler\\Crawler: {})"}}] []
+[2019-03-27 01:11:38] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:11:39] Crawler.INFO: Log [{"URL":"https://www.gadgetsnow.com/tech-news/excessive-use-of-smartphones-making-people-less-productive-says-study/articleshow/68581331.cms?","start":"2019-03-27 01:11:39","function":"getData","request_data":[]}] []
+[2019-03-27 01:11:39] Crawler.INFO: Log [{"URL":"https://www.gadgetsnow.com/tech-news/excessive-use-of-smartphones-making-people-less-productive-says-study/articleshow/68581331.cms?","end":"2019-03-27 01:11:39","function":"getData","response_data":{"client":"[object] (Goutte\\Client: {})","crawler":"[object] (Symfony\\Component\\DomCrawler\\Crawler: {})"}}] []
+[2019-03-27 01:11:39] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:11:39] Crawler.INFO: Log [{"URL":"https://www.gadgetsnow.com/tech-news/facebook-hiring-experts-for-blockchain-applications-and-cryptocurrency/articleshow/68581162.cms?","start":"2019-03-27 01:11:39","function":"getData","request_data":[]}] []
+[2019-03-27 01:11:40] Crawler.INFO: Log [{"URL":"https://www.gadgetsnow.com/tech-news/facebook-hiring-experts-for-blockchain-applications-and-cryptocurrency/articleshow/68581162.cms?","end":"2019-03-27 01:11:40","function":"getData","response_data":{"client":"[object] (Goutte\\Client: {})","crawler":"[object] (Symfony\\Component\\DomCrawler\\Crawler: {})"}}] []
+[2019-03-27 01:11:40] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:11:40] Crawler.INFO: Log [{"URL":"https://www.gadgetsnow.com/tech-news/ai-powered-robot-to-address-dubai-forum-session/articleshow/68581062.cms?","start":"2019-03-27 01:11:40","function":"getData","request_data":[]}] []
+[2019-03-27 01:11:40] Crawler.INFO: Log [{"URL":"https://www.gadgetsnow.com/tech-news/ai-powered-robot-to-address-dubai-forum-session/articleshow/68581062.cms?","end":"2019-03-27 01:11:40","function":"getData","response_data":{"client":"[object] (Goutte\\Client: {})","crawler":"[object] (Symfony\\Component\\DomCrawler\\Crawler: {})"}}] []
+[2019-03-27 01:11:41] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:11:43] Crawler.INFO: Log [{"URL":"https://www.gadgetsnow.com/tech-news/microsoft-asks-social-media-platforms-to-act-fast-on-terror/articleshow/68580428.cms?","start":"2019-03-27 01:11:43","function":"getData","request_data":[]}] []
+[2019-03-27 01:11:43] Crawler.INFO: Log [{"URL":"https://www.gadgetsnow.com/tech-news/microsoft-asks-social-media-platforms-to-act-fast-on-terror/articleshow/68580428.cms?","end":"2019-03-27 01:11:43","function":"getData","response_data":{"client":"[object] (Goutte\\Client: {})","crawler":"[object] (Symfony\\Component\\DomCrawler\\Crawler: {})"}}] []
+[2019-03-27 01:11:43] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:11:43] Crawler.INFO: Log [{"URL":"https://www.gadgetsnow.com/tech-news/facebook-whatsapp-and-twitter-main-news-source-for-young-indians-report/articleshow/68580005.cms?","start":"2019-03-27 01:11:43","function":"getData","request_data":[]}] []
+[2019-03-27 01:11:44] Crawler.INFO: Log [{"URL":"https://www.gadgetsnow.com/tech-news/facebook-whatsapp-and-twitter-main-news-source-for-young-indians-report/articleshow/68580005.cms?","end":"2019-03-27 01:11:44","function":"getData","response_data":{"client":"[object] (Goutte\\Client: {})","crawler":"[object] (Symfony\\Component\\DomCrawler\\Crawler: {})"}}] []
+[2019-03-27 01:11:44] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:11:44] Crawler.INFO: Log [{"URL":"https://www.gadgetsnow.com/tech-news/elections-2019-no-election-commission-does-not-allow-you-to-do-this-so-dont-fall-for-this-fake-whatsapp-message/articleshow/68580065.cms?","start":"2019-03-27 01:11:44","function":"getData","request_data":[]}] []
+[2019-03-27 01:11:44] Crawler.INFO: Log [{"URL":"https://www.gadgetsnow.com/tech-news/elections-2019-no-election-commission-does-not-allow-you-to-do-this-so-dont-fall-for-this-fake-whatsapp-message/articleshow/68580065.cms?","end":"2019-03-27 01:11:44","function":"getData","response_data":{"client":"[object] (Goutte\\Client: {})","crawler":"[object] (Symfony\\Component\\DomCrawler\\Crawler: {})"}}] []
+[2019-03-27 01:11:44] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:11:45] Crawler.INFO: Log [{"URL":"https://www.gadgetsnow.com/tech-news/uber-acquires-rival-careem-in-3-1-billion-deal/articleshow/68579708.cms?","start":"2019-03-27 01:11:45","function":"getData","request_data":[]}] []
+[2019-03-27 01:11:45] Crawler.INFO: Log [{"URL":"https://www.gadgetsnow.com/tech-news/uber-acquires-rival-careem-in-3-1-billion-deal/articleshow/68579708.cms?","end":"2019-03-27 01:11:45","function":"getData","response_data":{"client":"[object] (Goutte\\Client: {})","crawler":"[object] (Symfony\\Component\\DomCrawler\\Crawler: {})"}}] []
+[2019-03-27 01:11:45] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:11:47] Crawler.INFO: Log [{"URL":"https://www.gadgetsnow.com/tech-news/samsung-smartphone-users-in-india-heres-good-news-for-you/articleshow/68579876.cms?","start":"2019-03-27 01:11:47","function":"getData","request_data":[]}] []
+[2019-03-27 01:11:48] Crawler.INFO: Log [{"URL":"https://www.gadgetsnow.com/tech-news/samsung-smartphone-users-in-india-heres-good-news-for-you/articleshow/68579876.cms?","end":"2019-03-27 01:11:48","function":"getData","response_data":{"client":"[object] (Goutte\\Client: {})","crawler":"[object] (Symfony\\Component\\DomCrawler\\Crawler: {})"}}] []
+[2019-03-27 01:11:48] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:11:48] Crawler.INFO: Log [{"URL":"https://www.gadgetsnow.com/tech-news/nclat-stays-telecom-departments-show-cause-notices-to-reliance-communications-for-cancellation-of-spectrum-licence/articleshow/68579463.cms?","start":"2019-03-27 01:11:48","function":"getData","request_data":[]}] []
+[2019-03-27 01:11:48] Crawler.INFO: Log [{"URL":"https://www.gadgetsnow.com/tech-news/nclat-stays-telecom-departments-show-cause-notices-to-reliance-communications-for-cancellation-of-spectrum-licence/articleshow/68579463.cms?","end":"2019-03-27 01:11:48","function":"getData","response_data":{"client":"[object] (Goutte\\Client: {})","crawler":"[object] (Symfony\\Component\\DomCrawler\\Crawler: {})"}}] []
+[2019-03-27 01:11:48] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:11:49] Crawler.INFO: Log [{"URL":"https://www.gadgetsnow.com/tech-news/trai-to-hold-consultation-with-bsnl-mtnl-on-allocation-4g-spectrum-rs-sharma/articleshow/68579413.cms?","start":"2019-03-27 01:11:49","function":"getData","request_data":[]}] []
+[2019-03-27 01:11:49] Crawler.INFO: Log [{"URL":"https://www.gadgetsnow.com/tech-news/trai-to-hold-consultation-with-bsnl-mtnl-on-allocation-4g-spectrum-rs-sharma/articleshow/68579413.cms?","end":"2019-03-27 01:11:49","function":"getData","response_data":{"client":"[object] (Goutte\\Client: {})","crawler":"[object] (Symfony\\Component\\DomCrawler\\Crawler: {})"}}] []
+[2019-03-27 01:11:49] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:11:53] Crawler.INFO: Log [{"URL":"https://www.gadgetsnow.com/tech-news/75-women-in-tech-in-india-feel-diversity-is-a-top-priority-for-the-industry-report/articleshow/68579218.cms?","start":"2019-03-27 01:11:53","function":"getData","request_data":[]}] []
+[2019-03-27 01:11:53] Crawler.INFO: Log [{"URL":"https://www.gadgetsnow.com/tech-news/75-women-in-tech-in-india-feel-diversity-is-a-top-priority-for-the-industry-report/articleshow/68579218.cms?","end":"2019-03-27 01:11:53","function":"getData","response_data":{"client":"[object] (Goutte\\Client: {})","crawler":"[object] (Symfony\\Component\\DomCrawler\\Crawler: {})"}}] []
+[2019-03-27 01:11:53] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:11:54] Crawler.INFO: Log [{"URL":"https://www.gadgetsnow.com/tech-news/ipl-2019-match-updates-schedule-and-all-that-google-assistant-can-help-you-with/articleshow/68578802.cms?","start":"2019-03-27 01:11:54","function":"getData","request_data":[]}] []
+[2019-03-27 01:11:55] Crawler.INFO: Log [{"URL":"https://www.gadgetsnow.com/tech-news/ipl-2019-match-updates-schedule-and-all-that-google-assistant-can-help-you-with/articleshow/68578802.cms?","end":"2019-03-27 01:11:55","function":"getData","response_data":{"client":"[object] (Goutte\\Client: {})","crawler":"[object] (Symfony\\Component\\DomCrawler\\Crawler: {})"}}] []
+[2019-03-27 01:11:55] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:11:55] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:11:56] Crawler.INFO: Log [{"URL":"https://www.gadgetsnow.com/tech-news/apple-ios-12-2-is-out-all-the-new-features/articleshow/68578415.cms?","start":"2019-03-27 01:11:56","function":"getData","request_data":[]}] []
+[2019-03-27 01:11:59] Crawler.INFO: Log [{"URL":"https://www.gadgetsnow.com/tech-news/apple-ios-12-2-is-out-all-the-new-features/articleshow/68578415.cms?","end":"2019-03-27 01:11:59","function":"getData","response_data":{"client":"[object] (Goutte\\Client: {})","crawler":"[object] (Symfony\\Component\\DomCrawler\\Crawler: {})"}}] []
+[2019-03-27 01:11:59] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:11:59] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:11:59] Crawler.INFO: Log [{"URL":"https://www.gadgetsnow.com/tech-news/laptop-bonanza-on-flipkart-get-up-to-rs-7500-off-on-lenovo-dell-hp-and-other-laptops/articleshow/68577238.cms?","start":"2019-03-27 01:11:59","function":"getData","request_data":[]}] []
+[2019-03-27 01:12:00] Crawler.INFO: Log [{"URL":"https://www.gadgetsnow.com/tech-news/laptop-bonanza-on-flipkart-get-up-to-rs-7500-off-on-lenovo-dell-hp-and-other-laptops/articleshow/68577238.cms?","end":"2019-03-27 01:12:00","function":"getData","response_data":{"client":"[object] (Goutte\\Client: {})","crawler":"[object] (Symfony\\Component\\DomCrawler\\Crawler: {})"}}] []
+[2019-03-27 01:12:00] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:12:04] Crawler.INFO: Log [{"URL":"https://www.gadgetsnow.com/tech-news/whatsapp-business-beta-for-ios-to-get-this-android-feature/articleshow/68576438.cms?","start":"2019-03-27 01:12:04","function":"getData","request_data":[]}] []
+[2019-03-27 01:12:05] Crawler.INFO: Log [{"URL":"https://www.gadgetsnow.com/tech-news/whatsapp-business-beta-for-ios-to-get-this-android-feature/articleshow/68576438.cms?","end":"2019-03-27 01:12:05","function":"getData","response_data":{"client":"[object] (Goutte\\Client: {})","crawler":"[object] (Symfony\\Component\\DomCrawler\\Crawler: {})"}}] []
+[2019-03-27 01:12:05] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:12:05] Crawler.INFO: Log [{"URL":"https://www.gadgetsnow.com/tech-news/heres-why-huawei-is-thanking-apple-and-ceo-tim-cook/articleshow/68576238.cms?","start":"2019-03-27 01:12:05","function":"getData","request_data":[]}] []
+[2019-03-27 01:12:05] Crawler.INFO: Log [{"URL":"https://www.gadgetsnow.com/tech-news/heres-why-huawei-is-thanking-apple-and-ceo-tim-cook/articleshow/68576238.cms?","end":"2019-03-27 01:12:05","function":"getData","response_data":{"client":"[object] (Goutte\\Client: {})","crawler":"[object] (Symfony\\Component\\DomCrawler\\Crawler: {})"}}] []
+[2019-03-27 01:12:05] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:12:05] Crawler.INFO: Log [{"URL":"https://www.gadgetsnow.com/tech-news/amazon-plans-to-roll-out-100-mall-kiosks-in-india/articleshow/68573447.cms?","start":"2019-03-27 01:12:05","function":"getData","request_data":[]}] []
+[2019-03-27 01:12:06] Crawler.INFO: Log [{"URL":"https://www.gadgetsnow.com/tech-news/amazon-plans-to-roll-out-100-mall-kiosks-in-india/articleshow/68573447.cms?","end":"2019-03-27 01:12:06","function":"getData","response_data":{"client":"[object] (Goutte\\Client: {})","crawler":"[object] (Symfony\\Component\\DomCrawler\\Crawler: {})"}}] []
+[2019-03-27 01:12:06] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:12:07] Crawler.INFO: Log [{"URL":"https://www3.nhk.or.jp/news/easy/k10011860241000/k10011860241000.html?","start":"2019-03-27 01:12:07","function":"getData","request_data":[]}] []
+[2019-03-27 01:12:07] Crawler.INFO: Log [{"URL":"https://www3.nhk.or.jp/news/easy/k10011860241000/k10011860241000.html?","end":"2019-03-27 01:12:07","function":"getData","response_data":{"client":"[object] (Goutte\\Client: {})","crawler":"[object] (Symfony\\Component\\DomCrawler\\Crawler: {})"}}] []
+[2019-03-27 01:12:07] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:12:07] Crawler.INFO: Log [{"URL":"https://www3.nhk.or.jp/news/easy/k10011859911000/k10011859911000.html?","start":"2019-03-27 01:12:07","function":"getData","request_data":[]}] []
+[2019-03-27 01:12:08] Crawler.INFO: Log [{"URL":"https://www3.nhk.or.jp/news/easy/k10011859911000/k10011859911000.html?","end":"2019-03-27 01:12:08","function":"getData","response_data":{"client":"[object] (Goutte\\Client: {})","crawler":"[object] (Symfony\\Component\\DomCrawler\\Crawler: {})"}}] []
+[2019-03-27 01:12:08] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:12:08] Crawler.INFO: Log [{"URL":"https://www3.nhk.or.jp/news/easy/k10011859461000/k10011859461000.html?","start":"2019-03-27 01:12:08","function":"getData","request_data":[]}] []
+[2019-03-27 01:12:08] Crawler.INFO: Log [{"URL":"https://www3.nhk.or.jp/news/easy/k10011859461000/k10011859461000.html?","end":"2019-03-27 01:12:08","function":"getData","response_data":{"client":"[object] (Goutte\\Client: {})","crawler":"[object] (Symfony\\Component\\DomCrawler\\Crawler: {})"}}] []
+[2019-03-27 01:12:08] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:12:09] Crawler.INFO: Log [{"URL":"https://www3.nhk.or.jp/news/easy/k10011858001000/k10011858001000.html?","start":"2019-03-27 01:12:09","function":"getData","request_data":[]}] []
+[2019-03-27 01:12:09] Crawler.INFO: Log [{"URL":"https://www3.nhk.or.jp/news/easy/k10011858001000/k10011858001000.html?","end":"2019-03-27 01:12:09","function":"getData","response_data":{"client":"[object] (Goutte\\Client: {})","crawler":"[object] (Symfony\\Component\\DomCrawler\\Crawler: {})"}}] []
+[2019-03-27 01:12:09] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:12:09] Crawler.INFO: Log [{"URL":"https://www3.nhk.or.jp/news/easy/k10011859231000/k10011859231000.html?","start":"2019-03-27 01:12:09","function":"getData","request_data":[]}] []
+[2019-03-27 01:12:10] Crawler.INFO: Log [{"URL":"https://www3.nhk.or.jp/news/easy/k10011859231000/k10011859231000.html?","end":"2019-03-27 01:12:10","function":"getData","response_data":{"client":"[object] (Goutte\\Client: {})","crawler":"[object] (Symfony\\Component\\DomCrawler\\Crawler: {})"}}] []
+[2019-03-27 01:12:10] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:12:10] Crawler.INFO: Log [{"URL":"https://www3.nhk.or.jp/news/easy/k10011858731000/k10011858731000.html?","start":"2019-03-27 01:12:10","function":"getData","request_data":[]}] []
+[2019-03-27 01:12:11] Crawler.INFO: Log [{"URL":"https://www3.nhk.or.jp/news/easy/k10011858731000/k10011858731000.html?","end":"2019-03-27 01:12:11","function":"getData","response_data":{"client":"[object] (Goutte\\Client: {})","crawler":"[object] (Symfony\\Component\\DomCrawler\\Crawler: {})"}}] []
+[2019-03-27 01:12:11] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:12:11] Crawler.INFO: Log [{"URL":"https://www3.nhk.or.jp/news/easy/k10011858101000/k10011858101000.html?","start":"2019-03-27 01:12:11","function":"getData","request_data":[]}] []
+[2019-03-27 01:12:12] Crawler.INFO: Log [{"URL":"https://www3.nhk.or.jp/news/easy/k10011858101000/k10011858101000.html?","end":"2019-03-27 01:12:12","function":"getData","response_data":{"client":"[object] (Goutte\\Client: {})","crawler":"[object] (Symfony\\Component\\DomCrawler\\Crawler: {})"}}] []
+[2019-03-27 01:12:12] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:12:14] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:12:14] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:12:14] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:12:14] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:12:14] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:12:14] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:12:14] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:12:14] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:12:14] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:12:14] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:12:15] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:12:15] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:12:15] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:12:17] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:12:17] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:12:17] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:12:17] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:12:17] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:12:17] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:12:17] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:12:17] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:12:18] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:12:18] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:12:18] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:12:18] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:12:18] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:12:18] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:12:18] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:12:18] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:12:18] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:12:18] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:12:18] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:12:18] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:12:18] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:12:18] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:12:18] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:12:18] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:12:19] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:12:19] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:12:20] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:12:21] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:12:21] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:12:21] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:12:21] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:12:21] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:12:21] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:12:21] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:12:21] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:12:21] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:12:21] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:12:21] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:12:21] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:12:28] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:12:29] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:12:29] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:12:29] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:12:29] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:12:29] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:12:29] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:12:29] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:12:29] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:12:29] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:12:29] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:12:29] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:12:29] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:12:39] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:12:39] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:12:39] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:12:39] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:12:39] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:12:39] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:12:39] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:12:39] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:12:39] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:12:39] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:12:39] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:12:39] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:12:39] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:12:51] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:12:51] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:12:51] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:12:51] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:12:51] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:12:51] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:12:51] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:12:52] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:12:52] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:12:52] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:12:52] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:12:52] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:12:52] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:13:00] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:13:00] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:13:00] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:13:00] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:13:00] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:13:00] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:13:00] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:13:00] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:13:00] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:13:00] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:13:01] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:13:01] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:13:01] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:13:02] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:13:02] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:13:02] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:13:02] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:13:02] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:13:02] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:13:03] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:13:03] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:13:03] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:13:03] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:13:03] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:13:03] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:13:03] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:13:04] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:13:04] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:13:05] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:13:05] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:13:05] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:13:05] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:13:05] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:13:05] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:13:05] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:13:05] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:13:05] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:13:05] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:13:05] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:13:09] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:13:09] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:13:09] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:13:09] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:13:09] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:13:09] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:13:09] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:13:09] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:13:09] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:13:09] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:13:09] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:13:10] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:13:10] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:13:12] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:13:12] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:13:13] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:13:13] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:13:13] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:13:13] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:13:13] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:13:13] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:13:13] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:13:13] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:13:13] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:13:13] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:13:13] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:13:15] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:13:15] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:13:15] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:13:16] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:13:16] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:13:16] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:13:16] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:13:16] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:13:16] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:13:16] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:13:16] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:13:16] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:13:16] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:13:20] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:13:21] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:13:21] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:13:21] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:13:21] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:13:21] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:13:21] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:13:21] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:13:21] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:13:21] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:13:21] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:13:21] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:13:21] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:13:24] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:13:24] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:13:25] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:13:25] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:13:25] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:13:25] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:13:25] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:13:25] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:13:25] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:13:25] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:13:25] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:13:25] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:13:25] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:13:28] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:13:28] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:13:28] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:13:28] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:13:28] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:13:28] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:13:28] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:13:28] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:13:28] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:13:28] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:13:28] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:13:28] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:13:28] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:13:32] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:13:32] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:13:32] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:13:32] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:13:32] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:13:32] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:13:32] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:13:32] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:13:32] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:13:32] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:13:32] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:13:32] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:13:32] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:13:33] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:13:33] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:13:33] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:13:33] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:13:33] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:13:33] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:13:33] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:13:33] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:13:33] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:13:33] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:13:33] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:13:33] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:13:33] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:13:33] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:13:33] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:13:34] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:13:34] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:13:34] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:13:34] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:13:34] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:13:34] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:13:34] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:13:34] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:13:34] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:13:34] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:13:34] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:13:34] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:13:34] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:13:34] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:13:34] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:13:35] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:13:35] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:13:35] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:13:35] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:13:35] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:13:35] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:13:35] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:13:35] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:13:35] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:13:35] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:13:35] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:13:35] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:13:35] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:13:35] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:13:36] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:13:36] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:13:36] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:13:36] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:13:36] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:13:36] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:13:36] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:13:36] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:13:36] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:13:36] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:13:36] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:13:36] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:13:36] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:13:36] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:13:37] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:13:37] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:13:37] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:13:37] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:13:37] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:13:37] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:13:37] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:13:38] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:13:38] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:13:38] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:13:38] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:13:38] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:13:38] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:13:38] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:13:38] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:13:38] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:13:38] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:13:38] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:13:38] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:13:38] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:13:39] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:13:39] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:13:39] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:13:39] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:13:39] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:13:39] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:13:39] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:13:39] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:13:39] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:13:39] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:13:39] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:13:39] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:13:39] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:13:39] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:13:39] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:13:40] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:13:40] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:13:40] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:13:40] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:13:40] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:13:40] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:13:40] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:13:40] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:13:40] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:13:40] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:13:40] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:13:40] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:13:40] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:13:40] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:13:40] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:13:41] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:13:41] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:13:41] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:13:41] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:13:41] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:13:41] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:13:41] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:13:41] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:13:41] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:13:41] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:13:41] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:13:41] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:13:41] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:13:41] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:13:41] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:13:42] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:13:42] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:13:42] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:13:42] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:13:42] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:13:42] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:13:42] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:13:42] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:13:42] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:13:42] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:13:42] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:13:42] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:13:43] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:13:43] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:13:43] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:13:43] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:13:43] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:13:43] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:13:43] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:13:43] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:13:43] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:13:43] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:13:43] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:13:43] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:13:43] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:13:43] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:13:43] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:13:44] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:13:44] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:13:44] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:13:44] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:13:44] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:13:44] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:13:44] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:13:44] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:13:44] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:13:44] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:13:44] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:13:44] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:13:44] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:13:44] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:13:44] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:13:45] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:13:45] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:13:45] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:13:45] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:13:45] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:13:45] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:13:45] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:13:45] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:13:45] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:13:45] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:13:45] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:13:45] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:13:45] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:13:45] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:13:45] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:13:45] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:13:46] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:13:46] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:13:46] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:13:46] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:13:46] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:13:46] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:13:46] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:13:46] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:13:46] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:13:46] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:13:46] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:13:46] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:13:46] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:13:46] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:13:47] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:13:47] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:13:47] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:13:47] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:13:47] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:13:47] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:13:47] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:13:47] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:13:47] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:13:47] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:13:47] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:13:47] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:13:47] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:13:47] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:13:48] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:13:48] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:13:48] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:13:48] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:13:48] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:13:48] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:13:48] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:13:48] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:13:48] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:13:48] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:13:48] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:13:48] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:13:49] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:13:49] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:13:49] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:13:49] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:13:49] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:13:49] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:13:49] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:13:49] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:13:49] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:13:49] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:13:49] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:13:49] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:13:49] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:13:49] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:13:49] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:13:50] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:13:50] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:13:50] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:13:50] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:13:50] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:13:50] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:13:50] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:13:50] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:13:50] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:13:50] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:13:50] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:13:50] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:13:50] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:13:50] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:13:50] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:13:50] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:13:51] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:13:51] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:13:51] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:13:51] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:13:51] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:13:51] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:13:51] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:13:51] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:13:51] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:13:51] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:13:51] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:13:51] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:13:51] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:13:51] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:13:51] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:13:52] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:13:52] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:13:52] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:13:52] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:13:52] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:13:52] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:13:52] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:13:52] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:13:52] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:13:52] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:13:52] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:13:52] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:13:52] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:13:52] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:13:52] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:13:53] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:13:53] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:13:53] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:13:53] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:13:53] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:13:53] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:13:53] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:13:53] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:13:53] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:13:53] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:13:53] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:13:53] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:13:53] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:13:53] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:13:53] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:13:54] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:13:54] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:13:54] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:13:54] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:13:54] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:13:54] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:13:54] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:13:54] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:13:54] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:13:54] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:13:54] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:13:54] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:13:54] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:13:54] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:13:55] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:13:55] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:13:55] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:13:55] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:13:55] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:13:55] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:13:55] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:13:55] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:13:55] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:13:55] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:13:55] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:13:55] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:13:55] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:13:55] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:13:56] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:13:56] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:13:56] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:13:56] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:13:56] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:13:56] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:13:56] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:13:56] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:13:56] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:13:56] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:13:56] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:13:56] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:13:56] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:13:56] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:13:57] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:13:57] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:13:57] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:13:57] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:13:57] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:13:57] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:13:57] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:13:57] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:13:57] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:13:57] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:13:57] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:13:57] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:13:57] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:13:57] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:13:58] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:13:58] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:13:58] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:13:58] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:13:58] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:13:58] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:13:58] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:13:58] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:13:58] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:13:58] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:13:58] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:13:58] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:13:58] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:13:58] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:13:59] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:13:59] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:13:59] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:13:59] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:13:59] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:13:59] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:13:59] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:13:59] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:13:59] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:13:59] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:13:59] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:13:59] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:13:59] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:13:59] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:14:00] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:14:00] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:14:00] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:14:00] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:14:00] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:14:00] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:14:00] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:14:00] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:14:00] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:14:00] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:14:00] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:14:00] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:14:00] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:14:00] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:14:00] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:14:01] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:14:01] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:14:01] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:14:01] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:14:01] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:14:01] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:14:01] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:14:01] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:14:01] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:14:01] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:14:01] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:14:01] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:14:01] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:14:01] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:14:01] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:14:02] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:14:02] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:14:02] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:14:02] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:14:02] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:14:02] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:14:02] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:14:02] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:14:02] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:14:02] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:14:02] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:14:02] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:14:02] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:14:02] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:14:03] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:14:03] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:14:03] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:14:03] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:14:03] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:14:03] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:14:03] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:14:03] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:14:03] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:14:03] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:14:03] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:14:03] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:14:03] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:14:03] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:14:03] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:14:04] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:14:04] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:14:04] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:14:04] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:14:04] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:14:04] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:14:04] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:14:04] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:14:04] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:14:04] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:14:04] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:14:04] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:14:04] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:14:04] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:14:04] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:14:05] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:14:05] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:14:05] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:14:05] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:14:05] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:14:05] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:14:05] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:14:05] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:14:05] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:14:05] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:14:05] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:14:05] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:14:05] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:14:05] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:14:06] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:14:06] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:14:06] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:14:06] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:14:06] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:14:06] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:14:06] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:14:06] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:14:06] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:14:06] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:14:06] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:14:06] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:14:06] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:14:06] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:14:06] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:14:07] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:14:07] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:14:07] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:14:07] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:14:07] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:14:07] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:14:07] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:14:07] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:14:07] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:14:07] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:14:07] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:14:07] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:14:07] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:14:07] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:14:08] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:14:08] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:14:08] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:14:08] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:14:08] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:14:08] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:14:08] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:14:08] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:14:08] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:14:08] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:14:08] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:14:08] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:14:09] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:14:09] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:14:09] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:14:09] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:14:09] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:14:09] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:14:09] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:14:09] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:14:09] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:14:09] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:14:09] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:14:09] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:14:09] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:14:09] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:14:09] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:14:10] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:14:10] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:14:10] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:14:10] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:14:10] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:14:10] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:14:10] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:14:10] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:14:10] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:14:10] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:14:10] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:14:10] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:14:10] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:14:10] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:14:10] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:14:11] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:14:11] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:14:11] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:14:11] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:14:11] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:14:11] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:14:11] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:14:11] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:14:11] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:14:11] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:14:11] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:14:11] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:14:11] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:14:11] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:14:11] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:14:11] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:14:12] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:14:12] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:14:12] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:14:12] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:14:12] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:14:12] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:14:12] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:14:12] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:14:12] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:14:12] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:14:12] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:14:12] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:14:12] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:14:12] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:14:12] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:14:13] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:14:13] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:14:13] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:14:13] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:14:13] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:14:13] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:14:13] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:14:13] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:14:13] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:14:13] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:14:13] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:14:13] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:14:13] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:14:13] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:14:13] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:14:14] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:14:14] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:14:14] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:14:14] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:14:14] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:14:14] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:14:14] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:14:14] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:14:14] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:14:14] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:14:14] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:14:14] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:14:14] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:14:14] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:14:14] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:14:14] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:14:15] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:14:15] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:14:15] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:14:15] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:14:15] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:14:15] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:14:15] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:14:15] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:14:15] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:14:15] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:14:15] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:14:15] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:14:15] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:14:15] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:14:16] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:14:16] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:14:16] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:14:16] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:14:16] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:14:16] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:14:16] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:14:16] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:14:16] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:14:16] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:14:16] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:14:16] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:14:16] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:14:16] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:14:16] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:14:17] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:14:17] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:14:17] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:14:17] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:14:17] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:14:17] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:14:17] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:14:17] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:14:17] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:14:17] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:14:17] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:14:17] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:14:17] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:14:17] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:14:17] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:14:18] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:14:18] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:14:18] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:14:18] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:14:18] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:14:18] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:14:18] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:14:18] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:14:18] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:14:18] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:14:18] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:14:18] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:14:18] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:14:18] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:14:18] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:14:19] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:14:19] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:14:19] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:14:19] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:14:19] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:14:19] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:14:19] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:14:19] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:14:19] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:14:19] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:14:19] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:14:19] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:14:19] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:14:19] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:14:19] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:14:20] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:14:20] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:14:20] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:14:20] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:14:20] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:14:20] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:14:20] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:14:20] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:14:20] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:14:20] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:14:20] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:14:20] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:14:20] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:14:20] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:14:20] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:14:20] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:14:21] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:14:21] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:14:21] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:14:21] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:14:21] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:14:21] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:14:21] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:14:21] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:14:21] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  
+[2019-03-27 01:14:21] local.ERROR: Could not resolve host: dev.blog.eas-hcm.com  

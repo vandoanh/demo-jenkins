@@ -1,0 +1,144 @@
+version: '3'
+
+networks:
+  frontend:
+    driver: bridge
+  backend:
+    driver: bridge
+
+volumes:
+  mysql:
+    driver: local
+  mariadb:
+    driver: local
+  memcached:
+    driver: local
+  redis:
+    driver: local
+  elasticsearch:
+    driver: local
+
+services:
+
+  ### Nginx ##############################################
+  nginx:
+    build:
+      context: ./nginx
+      args:
+        - PHP_UPSTREAM_CONTAINER=${NGINX_PHP_UPSTREAM_CONTAINER}
+        - PHP_UPSTREAM_PORT=${NGINX_PHP_UPSTREAM_PORT}
+        - TZ=${WORKSPACE_TIMEZONE}
+    restart: unless-stopped
+    tty: true
+    ports:
+      - "${NGINX_HOST_HTTP_PORT}:80"
+      - "${NGINX_HOST_HTTPS_PORT}:443"
+      - "${NGINX_HOST_ES_PORT}:9100"
+    volumes:
+      - ${APP_CODE_PATH_HOST}:${APP_CODE_PATH_CONTAINER}
+    depends_on:
+      - php-fpm
+    networks:
+      - frontend
+      - backend
+
+  ### PHP-FPM ##############################################
+  php-fpm:
+    build:
+      context: ./php-fpm
+      args:
+        - TZ=${WORKSPACE_TIMEZONE}
+    restart: unless-stopped
+    volumes:
+      - ${APP_CODE_PATH_HOST}:${APP_CODE_PATH_CONTAINER}
+    networks:
+      - backend
+
+  ### MySQL ##############################################
+  mysql:
+      build:
+        context: ./mysql
+        args:
+          - MYSQL_VERSION=${MYSQL_VERSION}
+      restart: unless-stopped
+      tty: true
+      environment:
+        - MYSQL_DATABASE=${MYSQL_DATABASE}
+        - MYSQL_USER=${MYSQL_USER}
+        - MYSQL_PASSWORD=${MYSQL_PASSWORD}
+        - MYSQL_ROOT_PASSWORD=${MYSQL_ROOT_PASSWORD}
+        - TZ=${WORKSPACE_TIMEZONE}
+      volumes:
+        - ${DATA_PATH_HOST}/mysql:/var/lib/mysql
+        - ${MYSQL_ENTRYPOINT_INITDB}:/docker-entrypoint-initdb.d
+      ports:
+        - "${MYSQL_PORT}:3306"
+      networks:
+        - backend
+
+  ### MariaDB ##############################################
+  #mariadb:
+  #  build: ./mariadb
+  #  volumes:
+  #    - ${DATA_PATH_HOST}/mariadb:/var/lib/mysql
+  #    - ${MARIADB_ENTRYPOINT_INITDB}:/docker-entrypoint-initdb.d
+  #  ports:
+  #    - "${MARIADB_PORT}:3306"
+  #  environment:
+  #    - MYSQL_DATABASE=${MARIADB_DATABASE}
+  #    - MYSQL_USER=${MARIADB_USER}
+  #    - MYSQL_PASSWORD=${MARIADB_PASSWORD}
+  #    - MYSQL_ROOT_PASSWORD=${MARIADB_ROOT_PASSWORD}
+  #  networks:
+  #    - backend
+
+  ### Redis ##############################################
+  redis:
+    build: ./redis
+    volumes:
+      - ${DATA_PATH_HOST}/redis:/data
+    restart: unless-stopped
+    ports:
+      - "${REDIS_PORT}:6379"
+    depends_on:
+      - php-fpm
+    networks:
+      - backend
+
+  ### Memcached ############################################
+  memcached:
+    build: ./memcached
+    volumes:
+      - ${DATA_PATH_HOST}/memcached:/var/lib/memcached
+    restart: unless-stopped
+    ports:
+      - "${MEMCACHED_HOST_PORT}:11211"
+    depends_on:
+      - php-fpm
+    networks:
+      - backend
+
+  ### ElasticSearch ########################################
+  elasticsearch:
+    build: ./elasticsearch
+    restart: unless-stopped
+    environment:
+      - cluster.name=blog-cluster
+      - discovery.type=single-node
+      - bootstrap.memory_lock=true
+      - "ES_JAVA_OPTS=-Xms512m -Xmx512m"
+    ulimits:
+      memlock:
+        soft: -1
+        hard: -1
+    ports:
+      - "${ELASTICSEARCH_HOST_HTTP_PORT}:9200"
+      - "${ELASTICSEARCH_HOST_TRANSPORT_PORT}:9300"
+    depends_on:
+      - php-fpm
+    volumes:
+      - elasticsearch:/usr/share/elasticsearch/data
+    networks:
+      - frontend
+      - backend
+

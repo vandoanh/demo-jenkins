@@ -1,2 +1,0 @@
-# demo-jenkins
-crate jenkins
