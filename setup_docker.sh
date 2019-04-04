@@ -13,7 +13,7 @@ fi
 # Setup project
 ###########################################################################
 export COMPOSE_INTERACTIVE_NO_CLI=1
-echo "Copy .env.docker to .env"
+
 docker-compose exec php-fpm cp .env.docker .env;
 
 echo "Run composer install.";
