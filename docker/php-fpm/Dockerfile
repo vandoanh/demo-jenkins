@@ -139,7 +139,7 @@ RUN apt-get clean && \
 
 RUN usermod -u 1000 www-data
 
-WORKDIR /usr/share/nginx/html/blog
+WORKDIR /usr/share/nginx/html/demo-jenkin
 
 CMD ["php-fpm"]
 
