@@ -12,7 +12,8 @@ fi
 ###########################################################################
 # Setup project
 ###########################################################################
-docker-compose exec  -T php-fpm bash
+docker-compose exec -u root php-fpm bash
+cat /etc/os-release
 cp .env.docker .env;
 
 echo "Run composer install.";
