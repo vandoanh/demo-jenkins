@@ -12,10 +12,7 @@ fi
 ###########################################################################
 # Setup project
 ###########################################################################
-docker-compose exec jenkins bash
-cd /var/jenkins_home/workspace/demo-jenkins/docker
-
-docker-compose exec php-fpm bash
+docker-compose exec -T php-fpm bash
 cat /etc/os-release
 cp .env.docker .env;
 
